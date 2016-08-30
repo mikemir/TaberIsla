@@ -53,6 +53,11 @@
     <Compile Include="Context\DbTaberIsla.cs" />
     <Compile Include="Context\DbTaberIslaDataInitializer.cs" />
     <Compile Include="Interfaces\IResponsablesDAO.cs" />
+    <Compile Include="Migrations\201608300405319_InitialCreate.cs" />
+    <Compile Include="Migrations\201608300405319_InitialCreate.Designer.cs">
+      <DependentUpon>201608300405319_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResponsablesDAO.cs" />
   </ItemGroup>
@@ -64,6 +69,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201608300405319_InitialCreate.resx">
+      <DependentUpon>201608300405319_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

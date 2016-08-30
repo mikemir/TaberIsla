@@ -12,7 +12,7 @@ namespace Depcom.TaberIsla.DataAccess.Context
     {
         public DbTaberIsla() : base("DBTaberIsla")
         {
-            Database.SetInitializer(new DbTaberIslaDataInitializer());
+            //Database.SetInitializer(new DbTaberIslaDataInitializer());
         }
 
         public DbSet<Responsable> Responsables { get; set; }
