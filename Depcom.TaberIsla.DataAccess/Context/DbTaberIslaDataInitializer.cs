@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Depcom.TaberIsla.DataAccess.Context
 {
-    public class DbTaberIslaDataInitializer : DropCreateDatabaseAlways<DbTaberIsla>
+    public class DbTaberIslaDataInitializer : DropCreateDatabaseIfModelChanges<DbTaberIsla>
     {
         public override void InitializeDatabase(DbTaberIsla context)
         {
