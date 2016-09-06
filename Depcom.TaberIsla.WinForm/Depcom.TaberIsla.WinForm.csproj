@@ -55,6 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\FlatButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Depcom.TaberIsla.Entity;
 using Depcom.TaberIsla.DataAccess.Context;
+using System.Data.Entity;
 
 namespace Depcom.TaberIsla.DataAccess
 {
@@ -13,31 +14,70 @@ namespace Depcom.TaberIsla.DataAccess
     {
         public bool Delete(Responsable item)
         {
-            throw new NotImplementedException();
+            bool result = false;
+
+            using(var db = new DbTaberIsla())
+            {
+                var registro = GetById(item);
+                db.Responsables.Remove(registro);
+                result = db.SaveChanges() > 0;
+            }
+
+            return result;
         }
 
         public ICollection<Responsable> GetAll()
         {
-            return new DbTaberIsla().Responsables.ToList();
+            List<Responsable> result = null;
+
+            using(var db = new DbTaberIsla())
+            {
+                result = db.Responsables.ToList();
+            }
+
+            return result;
         }
 
-        public Responsable GetById(Responsable id)
+        public Responsable GetById(Responsable item)
         {
-            throw new NotImplementedException();
+            Responsable registro = null;
+
+            using (var db = new DbTaberIsla())
+            {
+                registro = db.Responsables.Find(item);
+            }
+
+            return registro;
         }
 
-        public bool Insert(Responsable item)
+        public Responsable Insert(Responsable item)
         {
-            var context = new DbTaberIsla();
-            context.Responsables.Add(item);
-            var result = context.SaveChanges();
+            bool result = false;
+            Responsable registro = null;
 
-            return result > 0;
+            using (var db = new DbTaberIsla())
+            {
+                registro = db.Responsables.Add(item);
+                result = db.SaveChanges() > 0;
+            }
+
+            return result ? registro : null;
         }
 
         public bool Update(Responsable item)
         {
-            throw new NotImplementedException();
+            bool result = false;
+
+            using(var db = new DbTaberIsla())
+            {
+                var registroAEditar = db.Responsables.Find(item.Id);
+                if (registroAEditar == null) throw new Exception("Registro no encontrado.");
+
+                db.Entry(registroAEditar).State = EntityState.Modified;
+                result = db.SaveChanges() > 0;
+            }
+
+            return result;
         }
     }
 }

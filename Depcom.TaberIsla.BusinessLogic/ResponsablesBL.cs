@@ -13,7 +13,7 @@ namespace Depcom.TaberIsla.BusinessLogic
     {
         public bool Delete(Responsable item)
         {
-            throw new NotImplementedException();
+            return new ResponsablesDAO().Delete(item);
         }
 
         public ICollection<Responsable> GetAll()
@@ -21,19 +21,19 @@ namespace Depcom.TaberIsla.BusinessLogic
             return new ResponsablesDAO().GetAll();
         }
 
-        public Responsable GetById(Responsable id)
+        public Responsable GetById(Responsable item)
         {
-            throw new NotImplementedException();
+            return new ResponsablesDAO().GetById(item);
         }
 
-        public bool Insert(Responsable item)
+        public Responsable Insert(Responsable item)
         {
             return new ResponsablesDAO().Insert(item);
         }
 
         public bool Update(Responsable item)
         {
-            throw new NotImplementedException();
+            return new ResponsablesDAO().Update(item);
         }
     }
 }

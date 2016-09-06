@@ -8,9 +8,9 @@ namespace Depcom.TaberIsla.BusinessLogic.Base
 {
     interface ITaberIslaBL<TEntity>
     {
-        TEntity GetById(TEntity id);
+        TEntity GetById(TEntity item);
         ICollection<TEntity> GetAll();
-        bool Insert(TEntity item);
+        TEntity Insert(TEntity item);
         bool Update(TEntity item);
         bool Delete(TEntity item);
     }

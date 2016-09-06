@@ -22,7 +22,8 @@ namespace Depcom.TaberIsla.WinForm
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             var bl = new ResponsablesBL();
-            var responsables = bl.GetAll();
+            dgvResponsables.DataSource = bl.GetAll();
+            dgvResponsables.Update();
         }
     }
 }

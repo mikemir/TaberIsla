@@ -1,4 +1,6 @@
-﻿namespace Depcom.TaberIsla.WinForm
+﻿using Depcom.TaberIsla.WinForm.Base;
+
+namespace Depcom.TaberIsla.WinForm
 {
     partial class FrmPrincipal
     {
@@ -28,20 +30,35 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dgvResponsables = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResponsables)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dgvResponsables
+            // 
+            this.dgvResponsables.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResponsables.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvResponsables.Location = new System.Drawing.Point(0, 0);
+            this.dgvResponsables.Name = "dgvResponsables";
+            this.dgvResponsables.Size = new System.Drawing.Size(884, 441);
+            this.dgvResponsables.TabIndex = 0;
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(884, 441);
+            this.Controls.Add(this.dgvResponsables);
             this.Name = "FrmPrincipal";
-            this.Text = "FrmPrincipal";
+            this.Text = "DEPCOM ESTADISTICO - Taber Isla v1.0";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResponsables)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView dgvResponsables;
     }
 }
