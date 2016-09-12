@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Depcom.TaberIsla.DataAccess.Context
 {
-    public class DbTaberIsla : DbContext
+    public class DbTaberIslaContext : DbContext
     {
-        public DbTaberIsla() : base("DBTaberIsla")
+        public DbTaberIslaContext() : base("DBTaberIsla")
         {
             //Database.SetInitializer(new DbTaberIslaDataInitializer());
         }

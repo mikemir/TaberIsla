@@ -1,5 +1,6 @@
 ﻿using Depcom.TaberIsla.BusinessLogic.Interfaces;
 using Depcom.TaberIsla.DataAccess;
+using Depcom.TaberIsla.DataAccess.Interfaces;
 using Depcom.TaberIsla.Entity;
 using System;
 using System.Collections.Generic;
@@ -11,29 +12,87 @@ namespace Depcom.TaberIsla.BusinessLogic
 {
     public class ResponsablesBL : IResponsablesBL
     {
-        public bool Delete(Responsable item)
+        private IUnitOfWork _uow;
+        public ResponsablesBL(IUnitOfWork unitOfWork)
         {
-            return new ResponsablesDAO().Delete(item);
+            if (unitOfWork == null)
+                throw new ArgumentNullException(nameof(unitOfWork));
+
+            _uow = unitOfWork;
+        }
+
+        public void Delete(Responsable item)
+        {
+            try
+            {
+                if (item == null)
+                    throw new ArgumentNullException(nameof(item));
+
+                _uow.ResposablesRepository.Delete(item);
+                _uow.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public ICollection<Responsable> GetAll()
         {
-            return new ResponsablesDAO().GetAll();
+            try
+            {
+                var responsables = _uow.ResposablesRepository.Get();
+                return responsables;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public Responsable GetById(Responsable item)
         {
-            return new ResponsablesDAO().GetById(item);
+            try
+            {
+                var responsable = _uow.ResposablesRepository.GetByKey(r => r.Id == item.Id);
+                return responsable;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
-        public Responsable Insert(Responsable item)
+        public void Insert(Responsable item)
         {
-            return new ResponsablesDAO().Insert(item);
+            try
+            {
+                if (item == null)
+                    throw new ArgumentNullException(nameof(item));
+
+                _uow.ResposablesRepository.Create(item);
+                _uow.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
-        public bool Update(Responsable item)
+        public void Update(Responsable item)
         {
-            return new ResponsablesDAO().Update(item);
+            try
+            {
+                if (item == null)
+                    throw new ArgumentNullException(nameof(item));
+
+                _uow.ResposablesRepository.Update(item);
+                _uow.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

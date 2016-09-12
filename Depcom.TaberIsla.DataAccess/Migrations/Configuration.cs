@@ -7,7 +7,7 @@ namespace Depcom.TaberIsla.DataAccess.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Context.DbTaberIsla>
+    internal sealed class Configuration : DbMigrationsConfiguration<Context.DbTaberIslaContext>
     {
         public Configuration()
         {
@@ -15,7 +15,7 @@ namespace Depcom.TaberIsla.DataAccess.Migrations
             ContextKey = "Depcom.TaberIsla.DataAccess.Context.DbTaberIsla";
         }
 
-        protected override void Seed(Context.DbTaberIsla context)
+        protected override void Seed(Context.DbTaberIslaContext context)
         {
             context.Responsables.AddOrUpdate(new Responsable
             {

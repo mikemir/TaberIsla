@@ -10,8 +10,8 @@ namespace Depcom.TaberIsla.BusinessLogic.Base
     {
         TEntity GetById(TEntity item);
         ICollection<TEntity> GetAll();
-        TEntity Insert(TEntity item);
-        bool Update(TEntity item);
-        bool Delete(TEntity item);
+        void Insert(TEntity item);
+        void Update(TEntity item);
+        void Delete(TEntity item);
     }
 }
