@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Depcom.TaberIsla.DepencyResolver;
+using Depcom.TaberIsla.WinForm.Services;
+using Depcom.TaberIsla.WinForm.Services.Interfaces;
+using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,9 +17,11 @@ namespace Depcom.TaberIsla.WinForm
         [STAThread]
         static void Main()
         {
+            var container = BootStrapper.Run();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPrincipal());
+            Application.Run(new FrmPrincipal(container));
         }
     }
 }

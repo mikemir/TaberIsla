@@ -6,10 +6,11 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Depcom.TaberIsla.Repository.Interfaces;
 
 namespace Depcom.TaberIsla.DataAccess
 {
-    public class TaberIslaUnitOfWork : IUnitOfWork, IDisposable
+    public class TaberIslaUnitOfWork : IUnitOfWork
     {
         private DbContext _dbContext;
         private IDbContextFactory _contextFactory;
@@ -21,10 +22,18 @@ namespace Depcom.TaberIsla.DataAccess
                 throw new ArgumentNullException(nameof(contextFactory));
 
             _contextFactory = contextFactory;
-            _dbContext = contextFactory.GetDbContext();
+            _dbContext = _contextFactory.GetDbContext();
         }
 
         public string UserName { get; set; }
+
+        public IResponsablesRepository ResponsablesRepository
+        {
+            get
+            {
+                return new ResposablesRepository(_dbContext);
+            }
+        }
 
         public virtual void SaveChanges()
         {

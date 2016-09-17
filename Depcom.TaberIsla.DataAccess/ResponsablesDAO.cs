@@ -11,37 +11,43 @@ namespace Depcom.TaberIsla.DataAccess
 {
     public class ResponsablesDAO : IResponsablesDAO
     {
-        private IResponsablesRepository _reponsablesRepository = null;
+        private IUnitOfWork _unitOfWork = null;
 
-        public ResponsablesDAO(IResponsablesRepository responsablesRepository)
+        public ResponsablesDAO(IUnitOfWork unitOfWork)
         {
-            if (responsablesRepository == null) throw new ArgumentNullException(nameof(responsablesRepository));
+            if (unitOfWork == null)
+                throw new ArgumentNullException(nameof(unitOfWork));
 
-            _reponsablesRepository = responsablesRepository;
+            _unitOfWork = unitOfWork;
         }
         public void Delete(Responsable entity)
         {
-            _reponsablesRepository.Delete(entity);
+            _unitOfWork.ResponsablesRepository.Delete(entity);
         }
 
         public IList<Responsable> GetAll()
         {
-            return _reponsablesRepository.Get();
+            return _unitOfWork.ResponsablesRepository.Get();
         }
 
         public Responsable GetByKey(int key)
         {
-            return _reponsablesRepository.GetByKey(r => r.Id == key);
+            return _unitOfWork.ResponsablesRepository.GetByKey(r => r.Id == key);
         }
 
         public void Insert(Responsable entity)
         {
-            _reponsablesRepository.Create(entity);
+            _unitOfWork.ResponsablesRepository.Create(entity);
         }
 
         public void Update(Responsable entity)
         {
-            _reponsablesRepository.Update(entity);
+            _unitOfWork.ResponsablesRepository.Update(entity);
+        }
+
+        public void Dispose()
+        {
+            _unitOfWork.Dispose();
         }
     }
 }

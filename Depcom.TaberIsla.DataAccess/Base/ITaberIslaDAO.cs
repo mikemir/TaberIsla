@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Depcom.TaberIsla.DataAccess.Base
 {
-    public interface ITaberIslaDAO<TEntity> where TEntity : class
+    public interface ITaberIslaDAO<TEntity> : IDisposable where TEntity : class
     {
         IList<TEntity> GetAll();
 

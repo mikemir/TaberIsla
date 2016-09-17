@@ -20,5 +20,10 @@ namespace Depcom.TaberIsla.WinForm.Services
 
             _resposablesBl = responsablesBl;
         }
+
+        public IList<Responsable> GetAll()
+        {
+            return _resposablesBl.GetAll();
+        }
     }
 }

@@ -9,6 +9,6 @@ namespace Depcom.TaberIsla.WinForm.Services.Interfaces
 {
     public interface IResponsablesServices
     {
-
+        IList<Responsable> GetAll();
     }
 }

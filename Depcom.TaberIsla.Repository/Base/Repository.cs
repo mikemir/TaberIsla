@@ -14,13 +14,13 @@ namespace Depcom.TaberIsla.Repository.Base
         protected DbContext DbContext { get; set; }
         protected DbSet<T> DbSet { get; set; }
 
-        public Repository(DbContext DbContext)
+        public Repository(DbContext dbContext)
         {
-            if (DbContext == null)
-                throw new ArgumentNullException(nameof(DbContext));
+            if (dbContext == null)
+                throw new ArgumentNullException(nameof(dbContext));
 
-            this.DbContext = DbContext;
-            this.DbSet = DbContext.Set<T>();
+            DbSet = dbContext.Set<T>();
+            DbContext = dbContext;
         }
 
         #region CRUD
@@ -32,7 +32,6 @@ namespace Depcom.TaberIsla.Repository.Base
                 if (filter != null) //where
                     query = query.Where(filter);
 
-                //includes:
                 if (includes != null)
                 {
                     query = includes.Aggregate(query,

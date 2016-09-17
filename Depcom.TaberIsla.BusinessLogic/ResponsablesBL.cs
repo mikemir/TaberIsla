@@ -15,7 +15,8 @@ namespace Depcom.TaberIsla.BusinessLogic
         private IResponsablesDAO _responsablesDao = null;
         public ResponsablesBL(IResponsablesDAO responsablesDao)
         {
-            if (responsablesDao == null) throw new ArgumentNullException(nameof(responsablesDao));
+            if (responsablesDao == null)
+                throw new ArgumentNullException(nameof(responsablesDao));
 
             _responsablesDao = responsablesDao;
         }
