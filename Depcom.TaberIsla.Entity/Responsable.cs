@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Depcom.TaberIsla.Entity
+namespace Depcom.TaberIsla.Domain
 {
     [Table("Responsables")]
     public class Responsable

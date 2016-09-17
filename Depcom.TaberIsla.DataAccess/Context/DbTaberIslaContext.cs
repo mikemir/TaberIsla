@@ -1,4 +1,4 @@
-﻿using Depcom.TaberIsla.Entity;
+﻿using Depcom.TaberIsla.Domain;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

@@ -10,11 +10,5 @@ namespace Depcom.TaberIsla.DataAccess.Interfaces
     public interface IDbContextFactory
     {
         DbContext GetDbContext();
-
-        /// <summary>
-        /// Obtiene el DBSet de la entidad que registra la auditoría.
-        /// </summary>
-        /// <returns></returns>
-        DbSet GetAuditEntityDbSet();
     }
 }

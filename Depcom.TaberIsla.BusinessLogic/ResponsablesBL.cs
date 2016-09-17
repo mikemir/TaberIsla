@@ -1,7 +1,7 @@
 ﻿using Depcom.TaberIsla.BusinessLogic.Interfaces;
 using Depcom.TaberIsla.DataAccess;
 using Depcom.TaberIsla.DataAccess.Interfaces;
-using Depcom.TaberIsla.Entity;
+using Depcom.TaberIsla.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,87 +12,36 @@ namespace Depcom.TaberIsla.BusinessLogic
 {
     public class ResponsablesBL : IResponsablesBL
     {
-        private IUnitOfWork _uow;
-        public ResponsablesBL(IUnitOfWork unitOfWork)
+        private IResponsablesDAO _responsablesDao = null;
+        public ResponsablesBL(IResponsablesDAO responsablesDao)
         {
-            if (unitOfWork == null)
-                throw new ArgumentNullException(nameof(unitOfWork));
+            if (responsablesDao == null) throw new ArgumentNullException(nameof(responsablesDao));
 
-            _uow = unitOfWork;
+            _responsablesDao = responsablesDao;
+        }
+        public void Delete(Responsable entity)
+        {
+            _responsablesDao.Delete(entity);
         }
 
-        public void Delete(Responsable item)
+        public IList<Responsable> GetAll()
         {
-            try
-            {
-                if (item == null)
-                    throw new ArgumentNullException(nameof(item));
-
-                _uow.ResposablesRepository.Delete(item);
-                _uow.SaveChanges();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            return _responsablesDao.GetAll();
         }
 
-        public ICollection<Responsable> GetAll()
+        public Responsable GetByKey(int key)
         {
-            try
-            {
-                var responsables = _uow.ResposablesRepository.Get();
-                return responsables;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            return _responsablesDao.GetByKey(key);
         }
 
-        public Responsable GetById(Responsable item)
+        public void Insert(Responsable entity)
         {
-            try
-            {
-                var responsable = _uow.ResposablesRepository.GetByKey(r => r.Id == item.Id);
-                return responsable;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            _responsablesDao.Insert(entity);
         }
 
-        public void Insert(Responsable item)
+        public void Update(Responsable entity)
         {
-            try
-            {
-                if (item == null)
-                    throw new ArgumentNullException(nameof(item));
-
-                _uow.ResposablesRepository.Create(item);
-                _uow.SaveChanges();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-        public void Update(Responsable item)
-        {
-            try
-            {
-                if (item == null)
-                    throw new ArgumentNullException(nameof(item));
-
-                _uow.ResposablesRepository.Update(item);
-                _uow.SaveChanges();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            _responsablesDao.Update(entity);
         }
     }
 }

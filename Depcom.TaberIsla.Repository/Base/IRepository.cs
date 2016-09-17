@@ -5,14 +5,12 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Depcom.TaberIsla.DataAccess.Interfaces
+namespace Depcom.TaberIsla.Repository.Base
 {
-    public interface IRepository<T> where T : class
+    public interface IRepository<TEntity> where TEntity : class
     {
-        string UserName { get; set; }
-
         /// <summary>
-        /// Returns a collection of <typeparamref name="T"/>. Parameters are optional.
+        /// Returns a collection of <typeparamref name="TEntity"/>. Parameters are optional.
         /// <example>
         /// <code>
         /// <para>//returns the all records:</para>
@@ -37,15 +35,9 @@ namespace Depcom.TaberIsla.DataAccess.Interfaces
         /// <code>o=> o.OrderBy(s=> s.SomeProperty)</code>
         /// </para>
         /// </param>
-        /// <returns>Returns a collection of <typeparamref name="T"/>. Parameters are optional.</returns>
-        IList<T> Get(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, params Expression<Func<T, object>>[] includes);
+        /// <returns>Returns a collection of <typeparamref name="TEntity"/>. Parameters are optional.</returns>
+        IList<TEntity> Get(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, params Expression<Func<TEntity, object>>[] includes);
 
-        T GetByKey(Expression<Func<T, bool>> keyFilter, params Expression<Func<T, object>>[] includes);
-
-        void Create(T entity);
-
-        void Update(T entity);
-
-        void Delete(T entity);
+        TEntity GetByKey(Expression<Func<TEntity, bool>> keyFilter, params Expression<Func<TEntity, object>>[] includes);
     }
 }

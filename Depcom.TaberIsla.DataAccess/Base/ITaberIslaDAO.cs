@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Depcom.TaberIsla.BusinessLogic.Base
+namespace Depcom.TaberIsla.DataAccess.Base
 {
-    public interface ITaberIslaBL<TEntity> where TEntity : class
+    public interface ITaberIslaDAO<TEntity> where TEntity : class
     {
         IList<TEntity> GetAll();
 

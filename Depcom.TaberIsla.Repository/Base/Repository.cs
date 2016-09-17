@@ -1,5 +1,4 @@
-﻿using Depcom.TaberIsla.DataAccess.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
@@ -8,14 +7,12 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Depcom.TaberIsla.DataAccess.Base
+namespace Depcom.TaberIsla.Repository.Base
 {
-    public class Repository<T> : Interfaces.IRepository<T> where T : class
+    public class Repository<T> : IRepository<T> where T : class
     {
         protected DbContext DbContext { get; set; }
         protected DbSet<T> DbSet { get; set; }
-        //@Audit
-        public string UserName { get; set; }
 
         public Repository(DbContext DbContext)
         {

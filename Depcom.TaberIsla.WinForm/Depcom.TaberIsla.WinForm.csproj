@@ -66,6 +66,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Interfaces\IResponsablesServices.cs" />
+    <Compile Include="Services\ResponsablesServices.cs" />
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,9 +99,9 @@
       <Project>{62e3f178-66fa-42b4-9e6f-ad058daaf1fc}</Project>
       <Name>Depcom.TaberIsla.BusinessLogic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Depcom.TaberIsla.Entity\Depcom.TaberIsla.Entity.csproj">
+    <ProjectReference Include="..\Depcom.TaberIsla.Entity\Depcom.TaberIsla.Domain.csproj">
       <Project>{edeeb363-1beb-46e0-8e0c-dd13a617c2fe}</Project>
-      <Name>Depcom.TaberIsla.Entity</Name>
+      <Name>Depcom.TaberIsla.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{62E3F178-66FA-42B4-9E6F-AD058DAAF1FC}</ProjectGuid>
+    <ProjectGuid>{B18FBA44-5D0C-4564-9343-6C230DD80DAA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Depcom.TaberIsla.BusinessLogic</RootNamespace>
-    <AssemblyName>Depcom.TaberIsla.BusinessLogic</AssemblyName>
+    <RootNamespace>Depcom.TaberIsla.Repository</RootNamespace>
+    <AssemblyName>Depcom.TaberIsla.Repository</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,11 +31,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoMapper, Version=5.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutoMapper.5.1.1\lib\net45\AutoMapper.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,22 +50,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\ITaberIslaBL.cs" />
-    <Compile Include="Interfaces\IResponsablesBL.cs" />
+    <Compile Include="Base\IRepository.cs" />
+    <Compile Include="Base\IRepositoryEditable.cs" />
+    <Compile Include="Base\Repository.cs" />
+    <Compile Include="Interfaces\IResponsablesRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResponsablesBL.cs" />
+    <Compile Include="ResposablesRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Depcom.TaberIsla.DataAccess\Depcom.TaberIsla.DataAccess.csproj">
-      <Project>{4E153BAB-F679-41F9-B29D-F79927FF4EEE}</Project>
-      <Name>Depcom.TaberIsla.DataAccess</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Depcom.TaberIsla.Entity\Depcom.TaberIsla.Domain.csproj">
-      <Project>{EDEEB363-1BEB-46E0-8E0C-DD13A617C2FE}</Project>
+      <Project>{edeeb363-1beb-46e0-8e0c-dd13a617c2fe}</Project>
       <Name>Depcom.TaberIsla.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

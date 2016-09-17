@@ -1,6 +1,6 @@
 namespace Depcom.TaberIsla.DataAccess.Migrations
 {
-    using Entity;
+    using Domain;
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;

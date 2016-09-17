@@ -1,5 +1,5 @@
 ﻿using Depcom.TaberIsla.BusinessLogic;
-using Depcom.TaberIsla.Entity;
+using Depcom.TaberIsla.Domain;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +21,7 @@ namespace Depcom.TaberIsla.WinForm
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-
+            //var bl = new ResponsablesBL(new TaberIslaUnitOfWork());
         }
     }
 }

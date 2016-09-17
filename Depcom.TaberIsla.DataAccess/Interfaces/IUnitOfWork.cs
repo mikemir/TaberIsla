@@ -1,4 +1,4 @@
-﻿using Depcom.TaberIsla.Entity;
+﻿using Depcom.TaberIsla.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +12,5 @@ namespace Depcom.TaberIsla.DataAccess.Interfaces
         string UserName { get; set; }
         void SaveChanges();
         void SaveChanges(string currentUserName);
-
-        IResponsablesRepository ResposablesRepository { get; }
     }
 }
