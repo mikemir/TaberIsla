@@ -14,8 +14,7 @@ namespace Depcom.TaberIsla.WinForm.Formularios
 {
     public partial class FrmNuevoEditarNaufrago : FlatForm
     {
-        public FrmNuevoEditarNaufrago(IUnityContainer container)
-            : base(container)
+        public FrmNuevoEditarNaufrago()
         {
             InitializeComponent();
         }

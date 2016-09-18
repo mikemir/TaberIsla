@@ -20,9 +20,14 @@ namespace Depcom.TaberIsla.WinForm
 {
     public partial class FrmPrincipal : FlatForm
     {
+        protected IUnityContainer _container = null;
         public FrmPrincipal(IUnityContainer container)
-            : base(container)
         {
+
+            if (container == null)
+                throw new ArgumentNullException(nameof(container));
+
+            _container = container;
             InitializeComponent();
         }
 
@@ -33,13 +38,20 @@ namespace Depcom.TaberIsla.WinForm
 
         private void btnNuevoResponsable_Click(object sender, EventArgs e)
         {
-
+            var frmNuevoResponsable = new FrmNuevoEditarResponsable(_container.Resolve<IResponsablesBL>());
+            frmNuevoResponsable.ShowDialog(this);
         }
 
         private void btnListNaufragos_Click(object sender, EventArgs e)
         {
-            var frmListNaufragos = new FrmListNaufragos(_container);
+            var frmListNaufragos = new FrmListNaufragos(_container.Resolve<IResponsablesBL>());
             frmListNaufragos.ShowDialog(this);
+        }
+
+        private void btnListResponsables_Click(object sender, EventArgs e)
+        {
+            var frmListResponsables = new FrmListResponsables(_container.Resolve<IResponsablesBL>());
+            frmListResponsables.ShowDialog(this);
         }
     }
 }

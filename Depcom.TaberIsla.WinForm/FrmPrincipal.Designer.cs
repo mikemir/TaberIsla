@@ -53,7 +53,6 @@ namespace Depcom.TaberIsla.WinForm
             // btnListResponsables
             // 
             this.btnListResponsables.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnListResponsables.Enabled = false;
             this.btnListResponsables.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListResponsables.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnListResponsables.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
@@ -63,6 +62,7 @@ namespace Depcom.TaberIsla.WinForm
             this.btnListResponsables.TabIndex = 2;
             this.btnListResponsables.Text = "RESPONSABLES";
             this.btnListResponsables.UseVisualStyleBackColor = false;
+            this.btnListResponsables.Click += new System.EventHandler(this.btnListResponsables_Click);
             // 
             // btnListNaufragos
             // 
@@ -102,10 +102,8 @@ namespace Depcom.TaberIsla.WinForm
             this.Controls.Add(this.btnListResponsables);
             this.Controls.Add(this.btnListNaufragos);
             this.Controls.Add(this.btnNuevoResponsable);
-            this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MaximizeBox = false;
             this.Name = "FrmPrincipal";
             this.Text = "DEPCOM ESTADISTICO - Taber Isla v1.0";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);

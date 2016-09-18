@@ -23,6 +23,7 @@ namespace Depcom.TaberIsla.DataAccess
         public void Delete(Responsable entity)
         {
             _unitOfWork.ResponsablesRepository.Delete(entity);
+            _unitOfWork.SaveChanges();
         }
 
         public IList<Responsable> GetAll()
@@ -38,11 +39,13 @@ namespace Depcom.TaberIsla.DataAccess
         public void Insert(Responsable entity)
         {
             _unitOfWork.ResponsablesRepository.Create(entity);
+            _unitOfWork.SaveChanges();
         }
 
         public void Update(Responsable entity)
         {
             _unitOfWork.ResponsablesRepository.Update(entity);
+            _unitOfWork.SaveChanges();
         }
 
         public void Dispose()

@@ -12,6 +12,7 @@ namespace Depcom.TaberIsla.WinForm.Base
     {
         public FlatButton()
         {
+            Size = new Size(100, 35);
             FlatStyle = FlatStyle.Flat;
             ForeColor = Color.FromArgb(255, 25, 25, 25);
             Font = new Font("Segoe UI", 10, FontStyle.Bold);
