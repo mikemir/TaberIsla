@@ -74,6 +74,27 @@
     <Compile Include="Base\FlatButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Base\FlatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmListNaufragos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmListNaufragos.Designer.cs">
+      <DependentUpon>FrmListNaufragos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmNuevoEditarNaufrago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmNuevoEditarNaufrago.Designer.cs">
+      <DependentUpon>FrmNuevoEditarNaufrago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmNuevoEditarResponsable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmNuevoEditarResponsable.Designer.cs">
+      <DependentUpon>FrmNuevoEditarResponsable.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +105,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Interfaces\IResponsablesServices.cs" />
     <Compile Include="Services\ResponsablesServices.cs" />
+    <EmbeddedResource Include="Formularios\FrmListNaufragos.resx">
+      <DependentUpon>FrmListNaufragos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +148,7 @@
       <Name>Depcom.TaberIsla.Domain</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

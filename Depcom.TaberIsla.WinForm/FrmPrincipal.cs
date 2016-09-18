@@ -1,6 +1,8 @@
 ﻿using Depcom.TaberIsla.BusinessLogic;
 using Depcom.TaberIsla.BusinessLogic.Interfaces;
 using Depcom.TaberIsla.Domain;
+using Depcom.TaberIsla.WinForm.Base;
+using Depcom.TaberIsla.WinForm.Formularios;
 using Depcom.TaberIsla.WinForm.Services;
 using Depcom.TaberIsla.WinForm.Services.Interfaces;
 using Microsoft.Practices.Unity;
@@ -16,22 +18,28 @@ using System.Windows.Forms;
 
 namespace Depcom.TaberIsla.WinForm
 {
-    public partial class FrmPrincipal : Form
+    public partial class FrmPrincipal : FlatForm
     {
-        IUnityContainer _container = null;
         public FrmPrincipal(IUnityContainer container)
+            : base(container)
         {
-            if (container == null)
-                throw new ArgumentNullException(nameof(container));
-
-            _container = container;
             InitializeComponent();
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            var service = new ResponsablesServices(_container.Resolve<IResponsablesBL>());
-            dgvResponsables.DataSource = service.GetAll();
+
+        }
+
+        private void btnNuevoResponsable_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnListNaufragos_Click(object sender, EventArgs e)
+        {
+            var frmListNaufragos = new FrmListNaufragos(_container);
+            frmListNaufragos.ShowDialog(this);
         }
     }
 }
