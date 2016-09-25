@@ -112,7 +112,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Interfaces\INaufragosServices.cs" />
     <Compile Include="Services\Interfaces\IResponsablesServices.cs" />
+    <Compile Include="Services\NaufragosServices.cs" />
     <Compile Include="Services\ResponsablesServices.cs" />
     <Compile Include="Utils\Interfaces\ICommunicable.cs" />
     <EmbeddedResource Include="Base\FlatForm.resx">

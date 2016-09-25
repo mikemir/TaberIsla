@@ -17,9 +17,12 @@ namespace Depcom.TaberIsla.WinForm.Formularios
     {
         INaufragosBL _naufragosBl;
 
-        public FrmNuevoEditarNaufrago()
+        public FrmNuevoEditarNaufrago(INaufragosBL naufragosBl)
         {
+            if (naufragosBl == null)
+                throw new ArgumentNullException(nameof(naufragosBl));
 
+            _naufragosBl = naufragosBl;
             InitializeComponent();
         }
     }

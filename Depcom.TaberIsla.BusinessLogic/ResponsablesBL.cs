@@ -14,39 +14,39 @@ namespace Depcom.TaberIsla.BusinessLogic
 {
     public class ResponsablesBL : IResponsablesBL
     {
-        private IResponsablesBL _responsablesBl;
+        private IResponsablesDAO _responsablesDao;
 
-        public ResponsablesBL(IResponsablesBL responsablesBl)
+        public ResponsablesBL(IResponsablesDAO responsablesDao)
         {
-            if (responsablesBl == null)
-                throw new ArgumentNullException(nameof(responsablesBl));
+            if (responsablesDao == null)
+                throw new ArgumentNullException(nameof(responsablesDao));
 
-            _responsablesBl = responsablesBl;
+            _responsablesDao = responsablesDao;
         }
 
         public void Delete(Responsable entity)
         {
-            _responsablesBl.Delete(entity);
+            _responsablesDao.Delete(entity);
         }
 
         public IList<Responsable> GetAll()
         {
-            return _responsablesBl.GetAll();
+            return _responsablesDao.GetAll();
         }
 
         public Responsable GetByKey(int key)
         {
-            return _responsablesBl.GetByKey(key);
+            return _responsablesDao.GetByKey(key);
         }
 
         public void Insert(Responsable entity)
         {
-            _responsablesBl.Insert(entity);
+            _responsablesDao.Insert(entity);
         }
 
         public void Update(Responsable entity)
         {
-            _responsablesBl.Update(entity);
+            _responsablesDao.Update(entity);
         }
     }
 }

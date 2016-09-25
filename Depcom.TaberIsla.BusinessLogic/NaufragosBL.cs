@@ -7,44 +7,45 @@ using System.Threading.Tasks;
 using Depcom.TaberIsla.Domain;
 using Depcom.TaberIsla.BusinessLogic.Base;
 using Depcom.TaberIsla.DataAccess.Base;
+using Depcom.TaberIsla.DataAccess.Interfaces;
 
 namespace Depcom.TaberIsla.BusinessLogic
 {
     public class NaufragosBL : INaufragosBL
     {
-        private INaufragosBL _naufragosBl;
+        private INaufragosDAO _naufragosDao;
 
-        public NaufragosBL(INaufragosBL naufragosBl)
+        public NaufragosBL(INaufragosDAO naufragosDao)
         {
-            if (naufragosBl == null)
-                throw new ArgumentNullException(nameof(naufragosBl));
+            if (naufragosDao == null)
+                throw new ArgumentNullException(nameof(naufragosDao));
 
-            _naufragosBl = naufragosBl;
+            _naufragosDao = naufragosDao;
         }
 
         public void Delete(Naufrago entity)
         {
-            _naufragosBl.Delete(entity);
+            _naufragosDao.Delete(entity);
         }
 
         public IList<Naufrago> GetAll()
         {
-            return _naufragosBl.GetAll();
+            return _naufragosDao.GetAll();
         }
 
         public Naufrago GetByKey(int key)
         {
-            return _naufragosBl.GetByKey(key);
+            return _naufragosDao.GetByKey(key);
         }
 
         public void Insert(Naufrago entity)
         {
-            _naufragosBl.Insert(entity);
+            _naufragosDao.Insert(entity);
         }
 
         public void Update(Naufrago entity)
         {
-            _naufragosBl.Update(entity);
+            _naufragosDao.Update(entity);
         }
     }
 }

@@ -21,14 +21,17 @@ namespace Depcom.TaberIsla.WinForm
 {
     public partial class FrmPrincipal : FlatForm, ICommunicable
     {
-        protected IUnityContainer _container = null;
+        private INaufragosBL _naufragosBl;
+        private IResponsablesBL _responsablesBl;
+
         public FrmPrincipal(IUnityContainer container)
         {
 
             if (container == null)
                 throw new ArgumentNullException(nameof(container));
 
-            _container = container;
+            _responsablesBl = container.Resolve<IResponsablesBL>();
+            _naufragosBl = container.Resolve<INaufragosBL>();
             InitializeComponent();
         }
 
@@ -39,25 +42,25 @@ namespace Depcom.TaberIsla.WinForm
 
         private void btnNuevoResponsable_Click(object sender, EventArgs e)
         {
-            var frmNuevoResponsable = new FrmNuevoEditarResponsable(_container.Resolve<IResponsablesBL>());
+            var frmNuevoResponsable = new FrmNuevoEditarResponsable(_responsablesBl);
             frmNuevoResponsable.Show(this);
         }
 
         private void btnListNaufragos_Click(object sender, EventArgs e)
         {
-            var frmListNaufragos = new FrmListNaufragos(_container.Resolve<IResponsablesBL>());
+            var frmListNaufragos = new FrmListNaufragos(_naufragosBl);
             frmListNaufragos.Show(this);
         }
 
         private void btnListResponsables_Click(object sender, EventArgs e)
         {
-            var frmListResponsables = new FrmListResponsables(_container.Resolve<IResponsablesBL>());
+            var frmListResponsables = new FrmListResponsables(_responsablesBl);
             frmListResponsables.Show(this);
         }
 
         public void Received(object result)
         {
-            var frmNuevoNaufrago = new FrmNuevoEditarNaufrago();//ToDo: INaufragosBL
+            var frmNuevoNaufrago = new FrmNuevoEditarNaufrago(_naufragosBl);
             frmNuevoNaufrago.Show(this);
         }
     }

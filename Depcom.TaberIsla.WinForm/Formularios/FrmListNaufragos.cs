@@ -16,13 +16,13 @@ namespace Depcom.TaberIsla.WinForm.Formularios
 {
     public partial class FrmListNaufragos : FlatForm
     {
-        private IResponsablesBL _responsablesBl = null;
-        public FrmListNaufragos(IResponsablesBL responsablesBl)
+        private INaufragosBL _naufragosBl = null;
+        public FrmListNaufragos(INaufragosBL naufragosBl)
         {
-            if (responsablesBl == null)
-                throw new ArgumentNullException(nameof(responsablesBl));
+            if (naufragosBl == null)
+                throw new ArgumentNullException(nameof(naufragosBl));
 
-            _responsablesBl = responsablesBl;
+            _naufragosBl = naufragosBl;
             InitializeComponent();
         }
 
@@ -30,7 +30,7 @@ namespace Depcom.TaberIsla.WinForm.Formularios
         {
             try
             {
-                var serviceNaufragos = new ResponsablesServices(_responsablesBl);
+                var serviceNaufragos = new NaufragosServices(_naufragosBl);
                 dgvNaufragos.DataSource = serviceNaufragos.GetAll();
             }
             catch (Exception ex)

@@ -32,7 +32,7 @@ namespace Depcom.TaberIsla.DepencyResolver
             container.RegisterType<INaufragosDAO, NaufragosDAO>();
 
             container.RegisterType<IResponsablesBL, ResponsablesBL>();
-            container.RegisterType<INaufragosDAO, NaufragosDAO>();
+            container.RegisterType<INaufragosBL, NaufragosBL>();
 
             return container;
         }
