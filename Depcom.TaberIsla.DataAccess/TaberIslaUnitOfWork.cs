@@ -35,6 +35,14 @@ namespace Depcom.TaberIsla.DataAccess
             }
         }
 
+        public INaufragosRepository NaufragosRepository
+        {
+            get
+            {
+                return new NaufragosRepository(_dbContext);
+            }
+        }
+
         public virtual void SaveChanges()
         {
             SaveChanges(this.UserName ?? "NO_USER");

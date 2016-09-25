@@ -15,5 +15,6 @@ namespace Depcom.TaberIsla.DataAccess.Interfaces
         void SaveChanges(string currentUserName);
 
         IResponsablesRepository ResponsablesRepository { get; }
+        INaufragosRepository NaufragosRepository { get; }
     }
 }

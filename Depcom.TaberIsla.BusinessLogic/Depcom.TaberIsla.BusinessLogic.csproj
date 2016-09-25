@@ -45,7 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\ITaberIslaBL.cs" />
+    <Compile Include="Base\TaberIslaBL.cs" />
+    <Compile Include="Interfaces\INaufragosBL.cs" />
     <Compile Include="Interfaces\IResponsablesBL.cs" />
+    <Compile Include="NaufragosBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResponsablesBL.cs" />
   </ItemGroup>

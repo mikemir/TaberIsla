@@ -10,6 +10,7 @@ using Depcom.TaberIsla.DataAccess.Interfaces;
 using Depcom.TaberIsla.DataAccess;
 using Depcom.TaberIsla.BusinessLogic.Interfaces;
 using Depcom.TaberIsla.BusinessLogic;
+using Depcom.TaberIsla.DataAccess.Base;
 
 namespace Depcom.TaberIsla.DepencyResolver
 {
@@ -23,9 +24,15 @@ namespace Depcom.TaberIsla.DepencyResolver
 
             container.RegisterType<IDbContextFactory, DbContextFactory>();
             container.RegisterType<IUnitOfWork, TaberIslaUnitOfWork>();
+
             container.RegisterType<IResponsablesRepository, ResposablesRepository>();
+            container.RegisterType<INaufragosRepository, NaufragosRepository>();
+
             container.RegisterType<IResponsablesDAO, ResponsablesDAO>();
+            container.RegisterType<INaufragosDAO, NaufragosDAO>();
+
             container.RegisterType<IResponsablesBL, ResponsablesBL>();
+            container.RegisterType<INaufragosDAO, NaufragosDAO>();
 
             return container;
         }

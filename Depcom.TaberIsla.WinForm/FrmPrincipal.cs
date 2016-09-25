@@ -5,6 +5,7 @@ using Depcom.TaberIsla.WinForm.Base;
 using Depcom.TaberIsla.WinForm.Formularios;
 using Depcom.TaberIsla.WinForm.Services;
 using Depcom.TaberIsla.WinForm.Services.Interfaces;
+using Depcom.TaberIsla.WinForm.Utils.Interfaces;
 using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ using System.Windows.Forms;
 
 namespace Depcom.TaberIsla.WinForm
 {
-    public partial class FrmPrincipal : FlatForm
+    public partial class FrmPrincipal : FlatForm, ICommunicable
     {
         protected IUnityContainer _container = null;
         public FrmPrincipal(IUnityContainer container)
@@ -39,19 +40,25 @@ namespace Depcom.TaberIsla.WinForm
         private void btnNuevoResponsable_Click(object sender, EventArgs e)
         {
             var frmNuevoResponsable = new FrmNuevoEditarResponsable(_container.Resolve<IResponsablesBL>());
-            frmNuevoResponsable.ShowDialog(this);
+            frmNuevoResponsable.Show(this);
         }
 
         private void btnListNaufragos_Click(object sender, EventArgs e)
         {
             var frmListNaufragos = new FrmListNaufragos(_container.Resolve<IResponsablesBL>());
-            frmListNaufragos.ShowDialog(this);
+            frmListNaufragos.Show(this);
         }
 
         private void btnListResponsables_Click(object sender, EventArgs e)
         {
             var frmListResponsables = new FrmListResponsables(_container.Resolve<IResponsablesBL>());
-            frmListResponsables.ShowDialog(this);
+            frmListResponsables.Show(this);
+        }
+
+        public void Received(object result)
+        {
+            var frmNuevoNaufrago = new FrmNuevoEditarNaufrago();//ToDo: INaufragosBL
+            frmNuevoNaufrago.Show(this);
         }
     }
 }

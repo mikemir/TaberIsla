@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Depcom.TaberIsla.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Depcom.TaberIsla.Repository.Base
 {
-    public interface IRepository<TEntity> where TEntity : class
+    public interface IRepository<TEntity> where TEntity : Entity
     {
         /// <summary>
         /// Returns a collection of <typeparamref name="TEntity"/>. Parameters are optional.

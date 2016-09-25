@@ -1,6 +1,7 @@
 ﻿using Depcom.TaberIsla.BusinessLogic.Interfaces;
 using Depcom.TaberIsla.Domain;
 using Depcom.TaberIsla.WinForm.Base;
+using Depcom.TaberIsla.WinForm.Utils.Interfaces;
 using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
@@ -48,8 +49,10 @@ namespace Depcom.TaberIsla.WinForm.Formularios
 
                 if(MessageBox.Show(this, "¿Desea continuar con el ingreso de los naufragos?", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    var frmNuevoEditarNaufrago = new FrmNuevoEditarNaufrago();
-                    frmNuevoEditarNaufrago.Show();
+                    if(Owner is ICommunicable)
+                    {
+                        ((ICommunicable)Owner).Received(null);
+                    }
                 }
 
                 Close();

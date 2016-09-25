@@ -9,10 +9,8 @@ using System.Threading.Tasks;
 namespace Depcom.TaberIsla.Domain
 {
     [Table("Medicamentos")]
-    public class Medicamento
+    public class Medicamento : Entity
     {
-        [Key]
-        public int Id { get; set; }
         public string Nombre { get; set; }
         public string Dosis { get; set; }
         public string Hora { get; set; }

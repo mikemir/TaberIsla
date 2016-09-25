@@ -53,7 +53,9 @@
     <Compile Include="Base\IRepository.cs" />
     <Compile Include="Base\IRepositoryEditable.cs" />
     <Compile Include="Base\Repository.cs" />
+    <Compile Include="Interfaces\INaufragosRepository.cs" />
     <Compile Include="Interfaces\IResponsablesRepository.cs" />
+    <Compile Include="NaufragosRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResposablesRepository.cs" />
   </ItemGroup>

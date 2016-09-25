@@ -1,4 +1,5 @@
-﻿using Depcom.TaberIsla.WinForm.Base;
+﻿using Depcom.TaberIsla.BusinessLogic.Interfaces;
+using Depcom.TaberIsla.WinForm.Base;
 using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
@@ -14,8 +15,11 @@ namespace Depcom.TaberIsla.WinForm.Formularios
 {
     public partial class FrmNuevoEditarNaufrago : FlatForm
     {
+        INaufragosBL _naufragosBl;
+
         public FrmNuevoEditarNaufrago()
         {
+
             InitializeComponent();
         }
     }

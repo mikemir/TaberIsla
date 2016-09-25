@@ -7,7 +7,7 @@
     <ProjectGuid>{EDEEB363-1BEB-46E0-8E0C-DD13A617C2FE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Depcom.TaberIsla.Entity</RootNamespace>
+    <RootNamespace>Depcom.TaberIsla.Domain</RootNamespace>
     <AssemblyName>Depcom.TaberIsla.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity.cs" />
     <Compile Include="Medicamento.cs" />
     <Compile Include="Naufrago.cs" />
     <Compile Include="Responsable.cs" />

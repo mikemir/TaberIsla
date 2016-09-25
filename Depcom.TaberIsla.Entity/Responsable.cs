@@ -9,11 +9,8 @@ using System.Threading.Tasks;
 namespace Depcom.TaberIsla.Domain
 {
     [Table("Responsables")]
-    public class Responsable
+    public class Responsable : Entity
     {
-        [Key]
-        public int Id { get; set; }
-
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
         public string Dui { get; set; }

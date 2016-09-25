@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Depcom.TaberIsla.Domain;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
@@ -9,11 +10,10 @@ using System.Threading.Tasks;
 
 namespace Depcom.TaberIsla.Repository.Base
 {
-    public class Repository<T> : IRepository<T> where T : class
+    public class Repository<T> : IRepositoryEditable<T> where T : Entity
     {
         protected DbContext DbContext { get; set; }
         protected DbSet<T> DbSet { get; set; }
-
         public Repository(DbContext dbContext)
         {
             if (dbContext == null)
