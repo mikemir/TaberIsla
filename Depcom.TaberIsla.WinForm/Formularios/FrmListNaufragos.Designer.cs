@@ -38,23 +38,25 @@
             this.dgvNaufragos.AllowUserToDeleteRows = false;
             this.dgvNaufragos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNaufragos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvNaufragos.Location = new System.Drawing.Point(0, 0);
+            this.dgvNaufragos.Location = new System.Drawing.Point(0, 10);
             this.dgvNaufragos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvNaufragos.Name = "dgvNaufragos";
             this.dgvNaufragos.ReadOnly = true;
-            this.dgvNaufragos.Size = new System.Drawing.Size(565, 472);
+            this.dgvNaufragos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvNaufragos.Size = new System.Drawing.Size(734, 436);
             this.dgvNaufragos.TabIndex = 0;
             // 
             // FrmListNaufragos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(565, 472);
+            this.ClientSize = new System.Drawing.Size(734, 461);
             this.Controls.Add(this.dgvNaufragos);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmListNaufragos";
             this.Text = "Naufragos";
             this.Load += new System.EventHandler(this.FrmListNaufragos_Load);
+            this.Controls.SetChildIndex(this.dgvNaufragos, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNaufragos)).EndInit();
             this.ResumeLayout(false);
 

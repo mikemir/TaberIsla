@@ -22,11 +22,11 @@ namespace Depcom.TaberIsla.DepencyResolver
         {
             IUnityContainer container = new UnityContainer();
 
-            container.RegisterType<IDbContextFactory, DbContextFactory>();
-            container.RegisterType<IUnitOfWork, TaberIslaUnitOfWork>();
+            container.RegisterType<IDbContextFactory, DbContextFactory>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IUnitOfWork, TaberIslaUnitOfWork>(new ContainerControlledLifetimeManager());
 
-            container.RegisterType<IResponsablesRepository, ResposablesRepository>();
-            container.RegisterType<INaufragosRepository, NaufragosRepository>();
+            container.RegisterType<IResponsablesRepository, ResposablesRepository>(new ContainerControlledLifetimeManager());
+            container.RegisterType<INaufragosRepository, NaufragosRepository>(new ContainerControlledLifetimeManager());
 
             container.RegisterType<IResponsablesDAO, ResponsablesDAO>();
             container.RegisterType<INaufragosDAO, NaufragosDAO>();

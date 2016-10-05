@@ -11,9 +11,20 @@ namespace Depcom.TaberIsla.DataAccess
 {
     public class DbContextFactory : IDbContextFactory
     {
+        private DbContext _context;
+
         public DbContext GetDbContext()
         {
-            return new DbTaberIslaContext();
+            if (_context == null) InitializeContext();
+            return _context;
+        }
+
+        private void InitializeContext()
+        {
+            _context = new DbTaberIslaContext();
+            _context.Configuration.ProxyCreationEnabled = false;
+            _context.Configuration.LazyLoadingEnabled = false;
+            _context.Configuration.ValidateOnSaveEnabled = false;
         }
     }
 }

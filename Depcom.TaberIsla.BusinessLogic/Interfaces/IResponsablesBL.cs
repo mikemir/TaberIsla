@@ -10,5 +10,6 @@ namespace Depcom.TaberIsla.BusinessLogic.Interfaces
 {
     public interface IResponsablesBL : ITaberIslaBL<Responsable>
     {
+        Responsable GetByDUI(string dui);
     }
 }

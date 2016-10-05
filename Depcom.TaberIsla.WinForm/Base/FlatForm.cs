@@ -1,6 +1,8 @@
-﻿using Microsoft.Practices.Unity;
+﻿using Depcom.TaberIsla.WinForm.Utils.Interfaces;
+using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +15,7 @@ namespace Depcom.TaberIsla.WinForm.Base
     {
         private Panel panelTop;
         private Panel panelBootom;
+        protected TipoAcceso _tipoAcceso = TipoAcceso.Nuevo;
 
         public FlatForm()
         {
@@ -23,9 +26,9 @@ namespace Depcom.TaberIsla.WinForm.Base
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelBootom = new System.Windows.Forms.Panel();
             this.SuspendLayout();
-            // 
+            //
             // panelTop
-            // 
+            //
             this.panelTop.BackColor = System.Drawing.Color.Silver;
             this.panelTop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -33,9 +36,9 @@ namespace Depcom.TaberIsla.WinForm.Base
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(484, 10);
             this.panelTop.TabIndex = 0;
-            // 
+            //
             // panelBootom
-            // 
+            //
             this.panelBootom.BackColor = System.Drawing.Color.Gray;
             this.panelBootom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelBootom.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -43,9 +46,9 @@ namespace Depcom.TaberIsla.WinForm.Base
             this.panelBootom.Name = "panelBootom";
             this.panelBootom.Size = new System.Drawing.Size(484, 15);
             this.panelBootom.TabIndex = 1;
-            // 
+            //
             // FlatForm
-            // 
+            //
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(484, 361);
             this.Controls.Add(this.panelBootom);
@@ -57,7 +60,7 @@ namespace Depcom.TaberIsla.WinForm.Base
             this.Name = "FlatForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
-
         }
+
     }
 }

@@ -36,6 +36,11 @@ namespace Depcom.TaberIsla.DataAccess
             return _unitOfWork.ResponsablesRepository.GetByKey(r => r.Id == key);
         }
 
+        public Responsable GetByDUI(string dui)
+        {
+            return _unitOfWork.ResponsablesRepository.Get(r => r.Dui == dui).FirstOrDefault();
+        }
+
         public void Insert(Responsable entity)
         {
             _unitOfWork.ResponsablesRepository.Create(entity);

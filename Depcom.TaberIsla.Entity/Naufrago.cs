@@ -14,6 +14,7 @@ namespace Depcom.TaberIsla.Domain
         public string Nombres { get; set; }
         public string Apellidos { get; set; }
         public DateTime FechaNacimiento { get; set; }
+        public string Observacion { get; set; }
 
         //Propiedades de navegación
         public ICollection<Medicamento> Medicamentos { get; set; }

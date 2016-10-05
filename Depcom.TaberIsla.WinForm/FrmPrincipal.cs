@@ -16,9 +16,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Depcom.TaberIsla.WinForm.Utils.Extensions;
 
 namespace Depcom.TaberIsla.WinForm
 {
+    public enum TipoAcceso
+    {
+        None,
+        Nuevo,
+        Editar
+    }
+
     public partial class FrmPrincipal : FlatForm, ICommunicable
     {
         private INaufragosBL _naufragosBl;
@@ -35,9 +43,27 @@ namespace Depcom.TaberIsla.WinForm
             InitializeComponent();
         }
 
+        public void LoadEstadist()
+        {
+            try
+            {
+                var countNaufragos = _naufragosBl.GetAll().Count();
+                btnListNaufragos.Text = $"NAUFRAGOS ({countNaufragos})";
+                lblCantidadTotal.SetCantidad(countNaufragos);
+
+                var countResponsables = _responsablesBl.GetAll().Count;
+                btnListResponsables.Text = $"RESPONSABLES ({countResponsables})";
+                lblCantidadRestante.SetCantidad(500 - countNaufragos);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Se ha producido un error: {ex.Message}");
+            }
+        }
+
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-
+            LoadEstadist();
         }
 
         private void btnNuevoResponsable_Click(object sender, EventArgs e)
@@ -60,6 +86,8 @@ namespace Depcom.TaberIsla.WinForm
 
         public void Received(object result)
         {
+            LoadEstadist();
+
             var frmNuevoNaufrago = new FrmNuevoEditarNaufrago(_naufragosBl);
             frmNuevoNaufrago.Show(this);
         }

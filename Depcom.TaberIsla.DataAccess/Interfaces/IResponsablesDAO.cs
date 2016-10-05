@@ -10,5 +10,6 @@ namespace Depcom.TaberIsla.DataAccess.Interfaces
 {
     public interface IResponsablesDAO : ITaberIslaDAO<Responsable>
     {
+        Responsable GetByDUI(string dui);
     }
 }

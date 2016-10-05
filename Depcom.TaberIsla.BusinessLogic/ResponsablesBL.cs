@@ -39,6 +39,11 @@ namespace Depcom.TaberIsla.BusinessLogic
             return _responsablesDao.GetByKey(key);
         }
 
+        public Responsable GetByDUI(string dui)
+        {
+            return _responsablesDao.GetByDUI(dui);
+        }
+
         public void Insert(Responsable entity)
         {
             _responsablesDao.Insert(entity);

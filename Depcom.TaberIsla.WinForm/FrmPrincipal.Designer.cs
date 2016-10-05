@@ -34,6 +34,10 @@ namespace Depcom.TaberIsla.WinForm
             this.btnListResponsables = new Depcom.TaberIsla.WinForm.Base.FlatButton();
             this.btnListNaufragos = new Depcom.TaberIsla.WinForm.Base.FlatButton();
             this.btnNuevoResponsable = new Depcom.TaberIsla.WinForm.Base.FlatButton();
+            this.lblCantidadTotal = new System.Windows.Forms.Label();
+            this.lblCantidadRestante = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // flatButton4
@@ -92,12 +96,52 @@ namespace Depcom.TaberIsla.WinForm
             this.btnNuevoResponsable.UseVisualStyleBackColor = false;
             this.btnNuevoResponsable.Click += new System.EventHandler(this.btnNuevoResponsable_Click);
             // 
+            // lblCantidadTotal
+            // 
+            this.lblCantidadTotal.AutoSize = true;
+            this.lblCantidadTotal.Location = new System.Drawing.Point(92, 393);
+            this.lblCantidadTotal.Name = "lblCantidadTotal";
+            this.lblCantidadTotal.Size = new System.Drawing.Size(49, 17);
+            this.lblCantidadTotal.TabIndex = 4;
+            this.lblCantidadTotal.Text = "ERROR";
+            // 
+            // lblCantidadRestante
+            // 
+            this.lblCantidadRestante.AutoSize = true;
+            this.lblCantidadRestante.Location = new System.Drawing.Point(92, 417);
+            this.lblCantidadRestante.Name = "lblCantidadRestante";
+            this.lblCantidadRestante.Size = new System.Drawing.Size(49, 17);
+            this.lblCantidadRestante.TabIndex = 5;
+            this.lblCantidadRestante.Text = "ERROR";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 393);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "TOTAL:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 417);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 17);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "RESTANTES:";
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(884, 461);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblCantidadRestante);
+            this.Controls.Add(this.lblCantidadTotal);
             this.Controls.Add(this.flatButton4);
             this.Controls.Add(this.btnListResponsables);
             this.Controls.Add(this.btnListNaufragos);
@@ -107,7 +151,16 @@ namespace Depcom.TaberIsla.WinForm
             this.Name = "FrmPrincipal";
             this.Text = "DEPCOM ESTADISTICO - Taber Isla v1.0";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
+            this.Controls.SetChildIndex(this.btnNuevoResponsable, 0);
+            this.Controls.SetChildIndex(this.btnListNaufragos, 0);
+            this.Controls.SetChildIndex(this.btnListResponsables, 0);
+            this.Controls.SetChildIndex(this.flatButton4, 0);
+            this.Controls.SetChildIndex(this.lblCantidadTotal, 0);
+            this.Controls.SetChildIndex(this.lblCantidadRestante, 0);
+            this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -117,5 +170,9 @@ namespace Depcom.TaberIsla.WinForm
         private FlatButton btnListNaufragos;
         private FlatButton btnListResponsables;
         private FlatButton flatButton4;
+        private System.Windows.Forms.Label lblCantidadTotal;
+        private System.Windows.Forms.Label lblCantidadRestante;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
