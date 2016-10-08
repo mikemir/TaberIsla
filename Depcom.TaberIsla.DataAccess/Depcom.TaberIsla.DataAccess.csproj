@@ -65,6 +65,14 @@
     <Compile Include="Migrations\201610022226555_observacion_field.Designer.cs">
       <DependentUpon>201610022226555_observacion_field.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610080509494_add-field-correlativo.cs" />
+    <Compile Include="Migrations\201610080509494_add-field-correlativo.Designer.cs">
+      <DependentUpon>201610080509494_add-field-correlativo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610080644006_add-update-fields.cs" />
+    <Compile Include="Migrations\201610080644006_add-update-fields.Designer.cs">
+      <DependentUpon>201610080644006_add-update-fields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NaufragosDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,6 +88,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610022226555_observacion_field.resx">
       <DependentUpon>201610022226555_observacion_field.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610080509494_add-field-correlativo.resx">
+      <DependentUpon>201610080509494_add-field-correlativo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610080644006_add-update-fields.resx">
+      <DependentUpon>201610080644006_add-update-fields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

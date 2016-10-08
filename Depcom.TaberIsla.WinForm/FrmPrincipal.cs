@@ -88,8 +88,15 @@ namespace Depcom.TaberIsla.WinForm
         {
             LoadEstadist();
 
-            var frmNuevoNaufrago = new FrmNuevoEditarNaufrago(_naufragosBl);
-            frmNuevoNaufrago.Show(this);
+            if (result == null) return;
+
+            if(result is Responsable)
+            {
+                var responsable = result as Responsable;
+
+                var frmNuevoNaufrago = new FrmNuevoEditarNaufrago(_naufragosBl, responsable);
+                frmNuevoNaufrago.Show(this);
+            }
         }
     }
 }

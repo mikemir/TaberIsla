@@ -11,9 +11,15 @@ namespace Depcom.TaberIsla.Domain
     [Table("Naufragos")]
     public class Naufrago : Entity
     {
+        [Required]
+        public int Correlativo { get; set; }
+        [Required]
         public string Nombres { get; set; }
+        [Required]
         public string Apellidos { get; set; }
+        [Column(TypeName = "DATE")]
         public DateTime FechaNacimiento { get; set; }
+
         public string Observacion { get; set; }
 
         //Propiedades de navegación

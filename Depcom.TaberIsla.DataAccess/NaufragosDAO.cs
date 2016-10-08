@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Depcom.TaberIsla.Domain;
+using System.Linq.Expressions;
 
 namespace Depcom.TaberIsla.DataAccess
 {
@@ -19,6 +20,12 @@ namespace Depcom.TaberIsla.DataAccess
 
             _unitOfWork = unitOfWork;
         }
+
+        public int Count(Expression<Func<Naufrago, bool>> filter = null)
+        {
+            return _unitOfWork.NaufragosRepository.Get(filter).Count();
+        }
+
         public void Delete(Naufrago entity)
         {
             _unitOfWork.NaufragosRepository.Delete(entity);

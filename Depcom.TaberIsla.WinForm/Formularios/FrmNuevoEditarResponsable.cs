@@ -18,7 +18,8 @@ namespace Depcom.TaberIsla.WinForm.Formularios
 {
     public partial class FrmNuevoEditarResponsable : FlatForm
     {
-        private IResponsablesBL _responsablesBl = null;
+        private int _idResponsable;
+        private IResponsablesBL _responsablesBl;
 
         public FrmNuevoEditarResponsable(IResponsablesBL responsablesBl)
         {
@@ -26,19 +27,34 @@ namespace Depcom.TaberIsla.WinForm.Formularios
                 throw new ArgumentNullException(nameof(responsablesBl));
 
             _responsablesBl = responsablesBl;
-
+            _tipoAcceso = TipoAcceso.Nuevo;
             InitializeComponent();
         }
 
-        public FrmNuevoEditarResponsable(IResponsablesBL responsablesBl, TipoAcceso tipoAcceso)
+        public FrmNuevoEditarResponsable(IResponsablesBL responsablesBl, int idResponsable)
         {
             if (responsablesBl == null)
                 throw new ArgumentNullException(nameof(responsablesBl));
 
             _responsablesBl = responsablesBl;
-            _tipoAcceso = tipoAcceso;
-
+            _tipoAcceso = TipoAcceso.Editar;
+            _idResponsable = idResponsable;
             InitializeComponent();
+        }
+
+        private void FrmNuevoEditarResponsable_Load(object sender, EventArgs e)
+        {
+            if(_tipoAcceso == TipoAcceso.Editar)
+            {
+                var responsable = _responsablesBl.GetByKey(_idResponsable);
+
+                txtId.Text = _idResponsable.ToString();
+                txtNombres.Text = responsable.Nombres;
+                txtApellidos.Text = responsable.Apellidos;
+                txtTelefono1.Text = responsable.Telefono1;
+                txtTelefono2.Text = responsable.Telefono2;
+                txtDireccion.Text = responsable.Direccion;
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -81,6 +97,13 @@ namespace Depcom.TaberIsla.WinForm.Formularios
                 {
                     if(Owner is ICommunicable)
                     {
+                        ((ICommunicable)Owner).Received(responsable);
+                    }
+                }
+                else
+                {
+                    if (Owner is ICommunicable)
+                    {
                         ((ICommunicable)Owner).Received(null);
                     }
                 }
@@ -90,6 +113,34 @@ namespace Depcom.TaberIsla.WinForm.Formularios
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+        private void txtDui_Validating(object sender, CancelEventArgs e)
+        {
+            if (!txtDui.IsDuiValid())
+            {
+                txtDui.BackColor = Color.Tomato;
+                MessageBox.Show("El DUI ingresado no es válido.");
+                e.Cancel = true;
+            }
+            else
+            {
+                txtDui.BackColor = Color.Gainsboro;
+                if (_tipoAcceso == TipoAcceso.Editar) return;
+
+                var responsable = _responsablesBl.GetByDUI(txtDui.Text);
+
+                if (responsable != null)
+                {
+                    txtId.Text = responsable.Id.ToString();
+                    txtNombres.Text = responsable.Nombres;
+                    txtApellidos.Text = responsable.Apellidos;
+                    txtTelefono1.Text = responsable.Telefono1;
+                    txtTelefono2.Text = responsable.Telefono2;
+                    txtDireccion.Text = responsable.Direccion;
+
+                    _tipoAcceso = TipoAcceso.Editar;
+                }
             }
         }
 
@@ -175,33 +226,6 @@ namespace Depcom.TaberIsla.WinForm.Formularios
             else
             {
                 txt.BackColor = Color.Gainsboro;
-            }
-        }
-
-        private void txtDui_Validating(object sender, CancelEventArgs e)
-        {
-            if (!txtDui.IsDuiValid())
-            {
-                txtDui.BackColor = Color.Tomato;
-                MessageBox.Show("El DUI ingresado no es válido.");
-                e.Cancel = true;
-            }
-            else
-            {
-                txtDui.BackColor = Color.Gainsboro;
-                var responsable = _responsablesBl.GetByDUI(txtDui.Text);
-
-                if (responsable != null)
-                {
-                    txtId.Text = responsable.Id.ToString();
-                    txtNombres.Text = responsable.Nombres;
-                    txtApellidos.Text = responsable.Apellidos;
-                    txtTelefono1.Text = responsable.Telefono1;
-                    txtTelefono2.Text = responsable.Telefono2;
-                    txtDireccion.Text = responsable.Direccion;
-
-                    _tipoAcceso = TipoAcceso.Editar;
-                }
             }
         }
     }

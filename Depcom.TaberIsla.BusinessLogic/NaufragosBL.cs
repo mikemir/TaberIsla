@@ -8,6 +8,7 @@ using Depcom.TaberIsla.Domain;
 using Depcom.TaberIsla.BusinessLogic.Base;
 using Depcom.TaberIsla.DataAccess.Base;
 using Depcom.TaberIsla.DataAccess.Interfaces;
+using System.Linq.Expressions;
 
 namespace Depcom.TaberIsla.BusinessLogic
 {
@@ -21,6 +22,11 @@ namespace Depcom.TaberIsla.BusinessLogic
                 throw new ArgumentNullException(nameof(naufragosDao));
 
             _naufragosDao = naufragosDao;
+        }
+
+        public int Count(Expression<Func<Naufrago, bool>> filter = null)
+        {
+            return _naufragosDao.Count(filter);
         }
 
         public void Delete(Naufrago entity)

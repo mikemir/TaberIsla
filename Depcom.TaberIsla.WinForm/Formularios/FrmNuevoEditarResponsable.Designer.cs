@@ -169,7 +169,7 @@
             // 
             // txtId
             // 
-            this.txtId.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtId.BackColor = System.Drawing.Color.LightSteelBlue;
             this.txtId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtId.Location = new System.Drawing.Point(383, 32);
             this.txtId.MaxLength = 10;
@@ -237,6 +237,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmNuevoEditarResponsable";
             this.Text = "Creación de responsable";
+            this.Load += new System.EventHandler(this.FrmNuevoEditarResponsable_Load);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.btnSiguiente, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
