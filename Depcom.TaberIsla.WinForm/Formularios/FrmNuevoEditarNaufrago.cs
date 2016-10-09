@@ -19,6 +19,7 @@ namespace Depcom.TaberIsla.WinForm.Formularios
     public partial class FrmNuevoEditarNaufrago : FlatForm
     {
         private int _idNaufrago;
+        private bool _validClosed;
         private Responsable _responsable;
         private INaufragosBL _naufragosBl;
 
@@ -46,9 +47,14 @@ namespace Depcom.TaberIsla.WinForm.Formularios
 
         private void FrmNuevoEditarNaufrago_Load(object sender, EventArgs e)
         {
-            dtpFechaNacimiento.Value = DateTime.Now.AddYears(-12);
+            _validClosed = true;
 
-            if(_tipoAcceso == TipoAcceso.Editar)
+            if (_tipoAcceso == TipoAcceso.Nuevo)
+            {
+                dtpFechaNacimiento.Value = DateTime.Now.AddYears(-12);
+                txtResponsable.Text = $"{_responsable.Nombres} {_responsable.Apellidos}";
+            }
+            else if(_tipoAcceso == TipoAcceso.Editar)
             {
                 var naufrago = _naufragosBl.GetByKey(_idNaufrago);
 
@@ -56,6 +62,7 @@ namespace Depcom.TaberIsla.WinForm.Formularios
                 txtNombres.Text = naufrago.Nombres;
                 txtApellidos.Text = naufrago.Apellidos;
                 dtpFechaNacimiento.Value = naufrago.FechaNacimiento;
+                txtResponsable.Text = $"{naufrago.Responsable.Nombres} {naufrago.Responsable.Apellidos}";
                 txtEdad.Text = ((DateTime.Now - naufrago.FechaNacimiento).Days / 365).ToString();
                 txtObservacion.Text = naufrago.Observacion;
             }
@@ -69,6 +76,12 @@ namespace Depcom.TaberIsla.WinForm.Formularios
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
             Naufrago naufrago;
+
+            if (!ValidarCampos())
+            {
+                MessageBox.Show("Hay datos invalidos (revisar campos en rojo), no se puede guardar el naufrago.", "Error de datos.");
+                return;
+            }
 
             try
             {
@@ -99,8 +112,8 @@ namespace Depcom.TaberIsla.WinForm.Formularios
                         throw new Exception($"Error en formulario {this.Name}: tipo de acceso incorrecto.");
                 }
 
-                var messageBoxText = $"El Naufrago ingresado tiene el correlativo {correlativo.ToString("000")} " +
-                    $"¿Desea continuar con el ingreso de un nuevo naufrago para el responsable {_responsable.Nombres}?";
+                var messageBoxText = $"El Naufrago ingresado tiene el correlativo {naufrago.Correlativo.ToString("000")} " +
+                    $"¿Desea continuar con el ingreso de un nuevo naufrago para el responsable {naufrago.Responsable.Nombres} {naufrago.Responsable.Apellidos}?";
 
                 if (MessageBox.Show(this, messageBoxText, "Ingreso naufrago", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
@@ -118,6 +131,7 @@ namespace Depcom.TaberIsla.WinForm.Formularios
 
                 }
 
+                _validClosed = false;
                 Close();
             }
             catch (Exception ex)
@@ -126,38 +140,33 @@ namespace Depcom.TaberIsla.WinForm.Formularios
             }
         }
 
-        private void txtNombres_Validating(object sender, CancelEventArgs e)
+        private void txt_Validating(object sender, CancelEventArgs e)
         {
-            var txt = sender as TextBox;
+            var txt = sender as TextBoxBase;
             if (txt == null) return;
 
-            if (txt.IsEmpty())
-            {
-                txt.BackColor = Color.Tomato;
-                MessageBox.Show("El 'Nombre' ingresado no es válido.");
-                e.Cancel = true;
-            }
-            else
-            {
-                txt.BackColor = Color.Gainsboro;
-            }
+            txt.BackColor = !string.IsNullOrWhiteSpace(txt.Text) ? Color.Gainsboro : Color.Tomato;
         }
 
-        private void txtApellidos_Validating(object sender, CancelEventArgs e)
+        public bool ValidarCampos()
         {
-            var txt = sender as TextBox;
-            if (txt == null) return;
+            var resultado = true;
 
-            if (txt.IsEmpty())
+            foreach (var item in Controls)
             {
-                txt.BackColor = Color.Tomato;
-                MessageBox.Show("El 'Apellido' ingresado no es válido.");
-                e.Cancel = true;
+                var txt = item as TextBoxBase;
+                if (txt == null) continue;
+                if (txt.Name == "txtId") continue;
+                if (txt.Name == "txtObservacion") continue;
+
+                if (string.IsNullOrWhiteSpace(txt.Text))
+                {
+                    resultado = false;
+                    break;
+                }
             }
-            else
-            {
-                txt.BackColor = Color.Gainsboro;
-            }
+
+            return resultado;
         }
 
         private void dtpFechaNacimiento_Validating(object sender, CancelEventArgs e)
@@ -167,18 +176,27 @@ namespace Depcom.TaberIsla.WinForm.Formularios
 
             if (dtp == null) return;
 
-            if (edadNaufrago > 12 || edadNaufrago <= 0)
+            if (edadNaufrago > 12 || edadNaufrago <= 7)
             {
                 dtp.CalendarTitleBackColor = Color.Tomato;
-                MessageBox.Show(edadNaufrago <= 0
-                    ? "La 'fecha de nacimiento' es incorrecta."
-                    : $"La  edad ({edadNaufrago}) del Naufrago no es apta para inscripción en la Taber Isla.");
+                MessageBox.Show($"La  edad ({edadNaufrago}años) del Naufrago no es apta para inscripción en la Taber Isla.");
                 e.Cancel = true;
             }
             else
             {
-                txtEdad.Text = edadNaufrago.ToString();
+                txtEdad.Text = $"{edadNaufrago.ToString()} años";
                 dtp.CalendarTitleBackColor = Color.White;
+            }
+        }
+
+        private void FrmNuevoEditarNaufrago_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!_validClosed) return;
+
+            if (MessageBox.Show("¿Está seguro de cerrar la ventana? perderá todos los datos ingresados.",
+                "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+            {
+                e.Cancel = true;
             }
         }
     }

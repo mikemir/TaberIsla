@@ -39,12 +39,12 @@ namespace Depcom.TaberIsla.DataAccess
 
         public IList<Naufrago> GetAll()
         {
-            return _unitOfWork.NaufragosRepository.Get();
+            return _unitOfWork.NaufragosRepository.Get(includes: n => n.Responsable);
         }
 
         public Naufrago GetByKey(int key)
         {
-            return _unitOfWork.NaufragosRepository.GetByKey(n => n.Id == key);
+            return _unitOfWork.NaufragosRepository.GetByKey(n => n.Id == key, n => n.Responsable, n => n.Medicamentos);
         }
 
         public void Insert(Naufrago entity)

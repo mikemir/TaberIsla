@@ -90,7 +90,7 @@
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(367, 25);
             this.txtNombres.TabIndex = 1;
-            this.txtNombres.Validating += new System.ComponentModel.CancelEventHandler(this.txtNombres_Validating);
+            this.txtNombres.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Validating);
             // 
             // txtApellidos
             // 
@@ -100,7 +100,7 @@
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(367, 25);
             this.txtApellidos.TabIndex = 2;
-            this.txtApellidos.Validating += new System.ComponentModel.CancelEventHandler(this.txtApellidos_Validating);
+            this.txtApellidos.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Validating);
             // 
             // label2
             // 
@@ -147,7 +147,7 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(367, 83);
             this.txtDireccion.TabIndex = 5;
-            this.txtDireccion.Validating += new System.ComponentModel.CancelEventHandler(this.txtDireccion_Validating);
+            this.txtDireccion.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Validating);
             // 
             // label6
             // 
@@ -188,7 +188,7 @@
             this.txtDui.PromptChar = '#';
             this.txtDui.Size = new System.Drawing.Size(158, 25);
             this.txtDui.TabIndex = 0;
-            this.txtDui.Validating += new System.ComponentModel.CancelEventHandler(this.txtDui_Validating);
+            this.txtDui.Leave += new System.EventHandler(this.txtDui_Leave);
             // 
             // txtTelefono2
             // 
@@ -200,7 +200,8 @@
             this.txtTelefono2.PromptChar = '#';
             this.txtTelefono2.Size = new System.Drawing.Size(132, 25);
             this.txtTelefono2.TabIndex = 4;
-            this.txtTelefono2.Validating += new System.ComponentModel.CancelEventHandler(this.txtTelefono2_Validating);
+            this.txtTelefono2.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtTelefono2.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Validating);
             // 
             // txtTelefono1
             // 
@@ -212,7 +213,8 @@
             this.txtTelefono1.PromptChar = '#';
             this.txtTelefono1.Size = new System.Drawing.Size(132, 25);
             this.txtTelefono1.TabIndex = 3;
-            this.txtTelefono1.Validating += new System.ComponentModel.CancelEventHandler(this.txtTelefono1_Validating);
+            this.txtTelefono1.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtTelefono1.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Validating);
             // 
             // FrmNuevoEditarResponsable
             // 
@@ -237,6 +239,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmNuevoEditarResponsable";
             this.Text = "Creación de responsable";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmNuevoEditarResponsable_FormClosing);
             this.Load += new System.EventHandler(this.FrmNuevoEditarResponsable_Load);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.btnSiguiente, 0);

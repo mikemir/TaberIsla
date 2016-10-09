@@ -28,6 +28,7 @@ namespace Depcom.TaberIsla.WinForm.Formularios
         private void FrmListResponsables_Load(object sender, EventArgs e)
         {
             var serviceNaufragos = new ResponsablesServices(_responsablesBl);
+            dgvResponsables.AutoGenerateColumns = false;
             dgvResponsables.DataSource = serviceNaufragos.GetAll();
         }
     }

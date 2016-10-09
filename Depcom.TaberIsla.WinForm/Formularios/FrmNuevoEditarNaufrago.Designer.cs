@@ -42,12 +42,14 @@
             this.txtEdad = new Depcom.TaberIsla.WinForm.Base.FlatTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtId = new Depcom.TaberIsla.WinForm.Base.FlatTextBox();
+            this.flatButton1 = new Depcom.TaberIsla.WinForm.Base.FlatButton();
+            this.txtResponsable = new Depcom.TaberIsla.WinForm.Base.FlatTextBox();
             this.SuspendLayout();
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 116);
+            this.label3.Location = new System.Drawing.Point(13, 114);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 17);
             this.label3.TabIndex = 11;
@@ -66,11 +68,11 @@
             // 
             this.txtApellidos.BackColor = System.Drawing.Color.Gainsboro;
             this.txtApellidos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtApellidos.Location = new System.Drawing.Point(98, 114);
+            this.txtApellidos.Location = new System.Drawing.Point(98, 112);
             this.txtApellidos.Name = "txtApellidos";
             this.txtApellidos.Size = new System.Drawing.Size(367, 25);
             this.txtApellidos.TabIndex = 2;
-            this.txtApellidos.Validating += new System.ComponentModel.CancelEventHandler(this.txtApellidos_Validating);
+            this.txtApellidos.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Validating);
             // 
             // txtNombres
             // 
@@ -80,12 +82,12 @@
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(367, 25);
             this.txtNombres.TabIndex = 1;
-            this.txtNombres.Validating += new System.ComponentModel.CancelEventHandler(this.txtNombres_Validating);
+            this.txtNombres.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Validating);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 157);
+            this.label1.Location = new System.Drawing.Point(12, 196);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 17);
             this.label1.TabIndex = 13;
@@ -94,7 +96,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 198);
+            this.label6.Location = new System.Drawing.Point(13, 237);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 17);
             this.label6.TabIndex = 15;
@@ -104,7 +106,7 @@
             // 
             this.txtObservacion.BackColor = System.Drawing.Color.Gainsboro;
             this.txtObservacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtObservacion.Location = new System.Drawing.Point(98, 196);
+            this.txtObservacion.Location = new System.Drawing.Point(98, 237);
             this.txtObservacion.Multiline = true;
             this.txtObservacion.Name = "txtObservacion";
             this.txtObservacion.Size = new System.Drawing.Size(367, 83);
@@ -116,7 +118,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.btnCancelar.Location = new System.Drawing.Point(248, 299);
+            this.btnCancelar.Location = new System.Drawing.Point(248, 338);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 35);
             this.btnCancelar.TabIndex = 11;
@@ -129,7 +131,7 @@
             this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSiguiente.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnSiguiente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.btnSiguiente.Location = new System.Drawing.Point(364, 299);
+            this.btnSiguiente.Location = new System.Drawing.Point(364, 338);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(100, 35);
             this.btnSiguiente.TabIndex = 10;
@@ -142,16 +144,16 @@
             this.dtpFechaNacimiento.CustomFormat = "dd-MM-yyyy";
             this.dtpFechaNacimiento.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(148, 155);
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(148, 194);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(200, 25);
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(178, 25);
             this.dtpFechaNacimiento.TabIndex = 3;
             this.dtpFechaNacimiento.Validating += new System.ComponentModel.CancelEventHandler(this.dtpFechaNacimiento_Validating);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(361, 157);
+            this.label4.Location = new System.Drawing.Point(332, 196);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 17);
             this.label4.TabIndex = 17;
@@ -161,10 +163,10 @@
             // 
             this.txtEdad.BackColor = System.Drawing.Color.LightSteelBlue;
             this.txtEdad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEdad.Location = new System.Drawing.Point(411, 155);
+            this.txtEdad.Location = new System.Drawing.Point(378, 194);
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.ReadOnly = true;
-            this.txtEdad.Size = new System.Drawing.Size(53, 25);
+            this.txtEdad.Size = new System.Drawing.Size(86, 25);
             this.txtEdad.TabIndex = 16;
             // 
             // label5
@@ -186,11 +188,35 @@
             this.txtId.Size = new System.Drawing.Size(87, 25);
             this.txtId.TabIndex = 18;
             // 
+            // flatButton1
+            // 
+            this.flatButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.flatButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flatButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.flatButton1.Location = new System.Drawing.Point(378, 154);
+            this.flatButton1.Name = "flatButton1";
+            this.flatButton1.Size = new System.Drawing.Size(87, 25);
+            this.flatButton1.TabIndex = 20;
+            this.flatButton1.Text = "Responsable";
+            this.flatButton1.UseVisualStyleBackColor = true;
+            // 
+            // txtResponsable
+            // 
+            this.txtResponsable.BackColor = System.Drawing.Color.Thistle;
+            this.txtResponsable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtResponsable.Location = new System.Drawing.Point(99, 154);
+            this.txtResponsable.Name = "txtResponsable";
+            this.txtResponsable.ReadOnly = true;
+            this.txtResponsable.Size = new System.Drawing.Size(280, 25);
+            this.txtResponsable.TabIndex = 21;
+            // 
             // FrmNuevoEditarNaufrago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 370);
+            this.ClientSize = new System.Drawing.Size(484, 402);
+            this.Controls.Add(this.txtResponsable);
+            this.Controls.Add(this.flatButton1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.label4);
@@ -207,6 +233,7 @@
             this.Controls.Add(this.txtNombres);
             this.Name = "FrmNuevoEditarNaufrago";
             this.Text = "Creación de Naufrago";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmNuevoEditarNaufrago_FormClosing);
             this.Load += new System.EventHandler(this.FrmNuevoEditarNaufrago_Load);
             this.Controls.SetChildIndex(this.txtNombres, 0);
             this.Controls.SetChildIndex(this.txtApellidos, 0);
@@ -222,6 +249,8 @@
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.txtId, 0);
             this.Controls.SetChildIndex(this.label5, 0);
+            this.Controls.SetChildIndex(this.flatButton1, 0);
+            this.Controls.SetChildIndex(this.txtResponsable, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,5 +272,7 @@
         private Base.FlatTextBox txtEdad;
         private System.Windows.Forms.Label label5;
         private Base.FlatTextBox txtId;
+        private Base.FlatButton flatButton1;
+        private Base.FlatTextBox txtResponsable;
     }
 }

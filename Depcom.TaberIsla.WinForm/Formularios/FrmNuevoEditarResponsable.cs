@@ -18,6 +18,7 @@ namespace Depcom.TaberIsla.WinForm.Formularios
 {
     public partial class FrmNuevoEditarResponsable : FlatForm
     {
+        private bool _validClosed;
         private int _idResponsable;
         private IResponsablesBL _responsablesBl;
 
@@ -44,6 +45,8 @@ namespace Depcom.TaberIsla.WinForm.Formularios
 
         private void FrmNuevoEditarResponsable_Load(object sender, EventArgs e)
         {
+            _validClosed = true;
+
             if(_tipoAcceso == TipoAcceso.Editar)
             {
                 var responsable = _responsablesBl.GetByKey(_idResponsable);
@@ -65,7 +68,37 @@ namespace Depcom.TaberIsla.WinForm.Formularios
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
             Responsable responsable;
-            var messageBoxText = "¿Desea continuar con el ingreso de los naufragos?";
+            var messageBoxText = " Responsable ingresado. ¿Desea continuar con el ingreso de los naufragos?";
+
+            if (!ValidarCampos())
+            {
+                MessageBox.Show("Hay datos invalidos (revisar campos en rojo), no se puede guardar el responsable.", "Error de datos.");
+                return;
+            }
+
+            if(txtDui.Text.Length < 10)
+            {
+                txtDui.BackColor = Color.Tomato;
+                var msjFail = "El 'DUI' ingresado no es válido.";
+                MessageBox.Show(msjFail, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (txtTelefono1.Text.Length < 8)
+            {
+                txtTelefono1.BackColor = Color.Tomato;
+                var msjFail = "El 'Telefono 1' ingresado no es válido.";
+                MessageBox.Show(msjFail, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (txtTelefono2.Text.Length < 8)
+            {
+                txtTelefono2.BackColor = Color.Tomato;
+                var msjFail = "El 'Telefono 2' ingresado no es válido.";
+                MessageBox.Show(msjFail, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             try
             {
@@ -108,6 +141,7 @@ namespace Depcom.TaberIsla.WinForm.Formularios
                     }
                 }
 
+                _validClosed = false;
                 Close();
             }
             catch (Exception ex)
@@ -115,13 +149,41 @@ namespace Depcom.TaberIsla.WinForm.Formularios
                 MessageBox.Show($"Error: {ex.Message}");
             }
         }
-        private void txtDui_Validating(object sender, CancelEventArgs e)
+
+        private void txt_Validating(object sender, CancelEventArgs e)
+        {
+            var txt = sender as TextBoxBase;
+            if (txt == null) return;
+
+            txt.BackColor = !string.IsNullOrWhiteSpace(txt.Text) ? Color.Gainsboro : Color.Tomato;
+        }
+
+        public bool ValidarCampos()
+        {
+            var resultado = true;
+
+            foreach (var item in Controls)
+            {
+                var txt = item as TextBoxBase;
+                if (txt == null) continue;
+                if (txt.Name == "txtId") continue;
+
+                if (string.IsNullOrWhiteSpace(txt.Text))
+                {
+                    resultado = false;
+                    break;
+                }
+            }
+
+            return resultado;
+        }
+
+        private void txtDui_Leave(object sender, EventArgs e)
         {
             if (!txtDui.IsDuiValid())
             {
                 txtDui.BackColor = Color.Tomato;
                 MessageBox.Show("El DUI ingresado no es válido.");
-                e.Cancel = true;
             }
             else
             {
@@ -144,88 +206,14 @@ namespace Depcom.TaberIsla.WinForm.Formularios
             }
         }
 
-        private void txtNombres_Validating(object sender, CancelEventArgs e)
+        private void FrmNuevoEditarResponsable_FormClosing(object sender, FormClosingEventArgs e)
         {
-            var txt = sender as TextBox;
-            if (txt == null) return;
+            if (!_validClosed) return;
 
-            if (txt.IsEmpty())
+            if (MessageBox.Show("¿Está seguro de cerrar la ventana? perderá todos los datos ingresados.",
+                "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
             {
-                txt.BackColor = Color.Tomato;
-                MessageBox.Show("El 'Nombre' ingresado no es válido.");
                 e.Cancel = true;
-            }
-            else
-            {
-                txt.BackColor = Color.Gainsboro;
-            }
-        }
-
-        private void txtApellidos_Validating(object sender, CancelEventArgs e)
-        {
-            var txt = sender as TextBox;
-            if (txt == null) return;
-
-            if (txt.IsEmpty())
-            {
-                txt.BackColor = Color.Tomato;
-                MessageBox.Show("El 'Apellido' ingresado no es válido.");
-                e.Cancel = true;
-            }
-            else
-            {
-                txt.BackColor = Color.Gainsboro;
-            }
-        }
-
-        private void txtTelefono1_Validating(object sender, CancelEventArgs e)
-        {
-            var txt = sender as TextBoxBase;
-            if (txt == null) return;
-
-            if (!txt.IsTelephone())
-            {
-                txt.BackColor = Color.Tomato;
-                MessageBox.Show("El 'Telefono 1' ingresado no es válido.");
-                e.Cancel = true;
-            }
-            else
-            {
-                txt.BackColor = Color.Gainsboro;
-            }
-        }
-
-        private void txtTelefono2_Validating(object sender, CancelEventArgs e)
-        {
-            var txt = sender as TextBoxBase;
-            if (txt == null) return;
-
-            if (!txt.IsTelephone())
-            {
-                txt.BackColor = Color.Tomato;
-                MessageBox.Show("El 'Telefono 2' ingresado no es válido.");
-                e.Cancel = true;
-            }
-            else
-            {
-                txt.BackColor = Color.Gainsboro;
-            }
-        }
-
-        private void txtDireccion_Validating(object sender, CancelEventArgs e)
-        {
-            var txt = sender as TextBox;
-            if (txt == null) return;
-
-            if (txt.IsEmpty())
-            {
-                txt.BackColor = Color.Tomato;
-                MessageBox.Show("La 'Dirección' ingresado no es válido.");
-                e.Cancel = true;
-            }
-            else
-            {
-                txt.BackColor = Color.Gainsboro;
             }
         }
     }

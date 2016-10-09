@@ -7,10 +7,7 @@ using System.Windows.Forms;
 
 namespace Depcom.TaberIsla.WinForm.Utils.Interfaces
 {
-    public interface IValidable<T> where T : Control
+    public interface IValidable
     {
-        bool Validate();
-
-        T ToValidate { get; set; }
     }
 }
