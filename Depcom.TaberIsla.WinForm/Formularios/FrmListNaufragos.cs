@@ -48,11 +48,6 @@ namespace Depcom.TaberIsla.WinForm.Formularios
             dgvNaufragos.DataSource = serviceNaufragos.GetAll();
         }
 
-        private void dgvNaufragos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         public void Received(object result)
         {
             LoadNaufragos();

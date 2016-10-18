@@ -15,11 +15,11 @@ namespace Depcom.TaberIsla.DataAccess.Context
             //Database.SetInitializer(new DbTaberIslaDataInitializer());
         }
 
-        public DbSet<Responsable> Responsables { get; set; }
+        public virtual DbSet<Responsable> Responsables { get; set; }
 
-        public DbSet<Naufrago> Naufragos { get; set; }
+        public virtual DbSet<Naufrago> Naufragos { get; set; }
 
-        public DbSet<Medicamento> Medicamentos { get; set; }
+        public virtual DbSet<Medicamento> Medicamentos { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

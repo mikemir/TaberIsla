@@ -19,8 +19,8 @@ namespace Depcom.TaberIsla.Repository.Base
             if (dbContext == null)
                 throw new ArgumentNullException(nameof(dbContext));
 
+            DbSet = dbContext.Set<T>();
             DbContext = dbContext;
-            DbSet = DbContext.Set<T>();
         }
 
         #region CRUD
@@ -40,7 +40,7 @@ namespace Depcom.TaberIsla.Repository.Base
 
                 return (orderBy == null) ? query.ToList() : orderBy(query).ToList<T>();
             }
-            catch
+            catch (Exception ex)
             {
                 throw;
             }

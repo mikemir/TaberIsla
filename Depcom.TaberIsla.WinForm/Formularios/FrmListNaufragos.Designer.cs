@@ -66,7 +66,6 @@
             this.dgvNaufragos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNaufragos.Size = new System.Drawing.Size(710, 371);
             this.dgvNaufragos.TabIndex = 0;
-            this.dgvNaufragos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNaufragos_CellContentDoubleClick);
             this.dgvNaufragos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNaufragos_CellEnter);
             // 
             // colId
