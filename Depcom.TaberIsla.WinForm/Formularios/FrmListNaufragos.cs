@@ -58,7 +58,7 @@ namespace Depcom.TaberIsla.WinForm.Formularios
             if(_idNaufragoSelected != 0)
             {
                 var frm = new FrmNuevoEditarNaufrago(_naufragosBl, _idNaufragoSelected);
-                frm.Show();
+                frm.Show(this);
             }
             else
             {

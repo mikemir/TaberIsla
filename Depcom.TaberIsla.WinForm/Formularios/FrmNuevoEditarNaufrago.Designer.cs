@@ -68,9 +68,9 @@
             // 
             this.txtApellidos.BackColor = System.Drawing.Color.Gainsboro;
             this.txtApellidos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtApellidos.Location = new System.Drawing.Point(98, 112);
+            this.txtApellidos.Location = new System.Drawing.Point(114, 112);
             this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(367, 25);
+            this.txtApellidos.Size = new System.Drawing.Size(351, 25);
             this.txtApellidos.TabIndex = 2;
             this.txtApellidos.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Validating);
             // 
@@ -78,9 +78,9 @@
             // 
             this.txtNombres.BackColor = System.Drawing.Color.Gainsboro;
             this.txtNombres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombres.Location = new System.Drawing.Point(98, 70);
+            this.txtNombres.Location = new System.Drawing.Point(114, 70);
             this.txtNombres.Name = "txtNombres";
-            this.txtNombres.Size = new System.Drawing.Size(367, 25);
+            this.txtNombres.Size = new System.Drawing.Size(351, 25);
             this.txtNombres.TabIndex = 1;
             this.txtNombres.Validating += new System.ComponentModel.CancelEventHandler(this.txt_Validating);
             // 
@@ -98,18 +98,18 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(13, 237);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 17);
+            this.label6.Size = new System.Drawing.Size(97, 34);
             this.label6.TabIndex = 15;
-            this.label6.Text = "Observación:";
+            this.label6.Text = "Observación /\r\nMedicamentos:";
             // 
             // txtObservacion
             // 
             this.txtObservacion.BackColor = System.Drawing.Color.Gainsboro;
             this.txtObservacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtObservacion.Location = new System.Drawing.Point(98, 237);
+            this.txtObservacion.Location = new System.Drawing.Point(114, 237);
             this.txtObservacion.Multiline = true;
             this.txtObservacion.Name = "txtObservacion";
-            this.txtObservacion.Size = new System.Drawing.Size(367, 83);
+            this.txtObservacion.Size = new System.Drawing.Size(351, 83);
             this.txtObservacion.TabIndex = 4;
             // 
             // btnCancelar
@@ -118,11 +118,11 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.btnCancelar.Location = new System.Drawing.Point(248, 338);
+            this.btnCancelar.Location = new System.Drawing.Point(235, 338);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 35);
             this.btnCancelar.TabIndex = 11;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -131,11 +131,11 @@
             this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSiguiente.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnSiguiente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.btnSiguiente.Location = new System.Drawing.Point(364, 338);
+            this.btnSiguiente.Location = new System.Drawing.Point(349, 338);
             this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(100, 35);
+            this.btnSiguiente.Size = new System.Drawing.Size(115, 35);
             this.btnSiguiente.TabIndex = 10;
-            this.btnSiguiente.Text = "Siguiente";
+            this.btnSiguiente.Text = "SIGUIENTE";
             this.btnSiguiente.UseVisualStyleBackColor = true;
             this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
@@ -144,9 +144,9 @@
             this.dtpFechaNacimiento.CustomFormat = "dd-MM-yyyy";
             this.dtpFechaNacimiento.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(148, 194);
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(159, 194);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(178, 25);
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(167, 25);
             this.dtpFechaNacimiento.TabIndex = 3;
             this.dtpFechaNacimiento.Validating += new System.ComponentModel.CancelEventHandler(this.dtpFechaNacimiento_Validating);
             // 
@@ -204,10 +204,10 @@
             // 
             this.txtResponsable.BackColor = System.Drawing.Color.Thistle;
             this.txtResponsable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtResponsable.Location = new System.Drawing.Point(99, 154);
+            this.txtResponsable.Location = new System.Drawing.Point(114, 154);
             this.txtResponsable.Name = "txtResponsable";
             this.txtResponsable.ReadOnly = true;
-            this.txtResponsable.Size = new System.Drawing.Size(280, 25);
+            this.txtResponsable.Size = new System.Drawing.Size(265, 25);
             this.txtResponsable.TabIndex = 21;
             // 
             // FrmNuevoEditarNaufrago

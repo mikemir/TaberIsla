@@ -63,8 +63,10 @@ namespace Depcom.TaberIsla.WinForm.Formularios
                 txtApellidos.Text = naufrago.Apellidos;
                 dtpFechaNacimiento.Value = naufrago.FechaNacimiento;
                 txtResponsable.Text = $"{naufrago.Responsable.Nombres} {naufrago.Responsable.Apellidos}";
-                txtEdad.Text = ((DateTime.Now - naufrago.FechaNacimiento).Days / 365).ToString();
+                txtEdad.Text = $"{naufrago.FechaNacimiento.GetEdad().ToString()} años";
                 txtObservacion.Text = naufrago.Observacion;
+
+                btnSiguiente.Text = "ACTUALIZAR";
             }
         }
 
@@ -79,7 +81,15 @@ namespace Depcom.TaberIsla.WinForm.Formularios
 
             if (!ValidarCampos())
             {
-                MessageBox.Show("Hay datos invalidos (revisar campos en rojo), no se puede guardar el naufrago.", "Error de datos.");
+                MessageBox.Show("Hay datos invalidos (revisar campos en rojo), no se puede guardar el náufrago.", "Error de datos.");
+                return;
+            }
+
+            var edadNaufrago = dtpFechaNacimiento.Value.GetEdad();
+            if (edadNaufrago < 7 || edadNaufrago > 12)
+            {
+                dtpFechaNacimiento.CalendarTitleBackColor = Color.Tomato;
+                MessageBox.Show($"La  edad ({edadNaufrago}años) del náufrago no es apta para inscripción en la Taber Isla.");
                 return;
             }
 
@@ -112,10 +122,16 @@ namespace Depcom.TaberIsla.WinForm.Formularios
                         throw new Exception($"Error en formulario {this.Name}: tipo de acceso incorrecto.");
                 }
 
-                var messageBoxText = $"El Naufrago ingresado tiene el correlativo {naufrago.Correlativo.ToString("000")} " +
-                    $"¿Desea continuar con el ingreso de un nuevo naufrago para el responsable {naufrago.Responsable.Nombres} {naufrago.Responsable.Apellidos}?";
+                MessageBoxButtons modalButtons = MessageBoxButtons.OK;
+                var messageBoxText = $"El náufrago ingresado/actualizado tiene el correlativo {naufrago.Correlativo.ToString("000")} ";
 
-                if (MessageBox.Show(this, messageBoxText, "Ingreso naufrago", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if(_tipoAcceso == TipoAcceso.Nuevo)
+                {
+                    modalButtons = MessageBoxButtons.YesNo;
+                    messageBoxText += $"¿Desea continuar con el ingreso de un nuevo náufrago para el responsable {naufrago.Responsable.Nombres} {naufrago.Responsable.Apellidos}?";
+                }
+
+                if (MessageBox.Show(this, messageBoxText, "Ingreso náufrago", modalButtons) == DialogResult.Yes)
                 {
                     if (Owner is ICommunicable)
                     {
@@ -172,19 +188,18 @@ namespace Depcom.TaberIsla.WinForm.Formularios
         private void dtpFechaNacimiento_Validating(object sender, CancelEventArgs e)
         {
             var dtp = sender as DateTimePicker;
-            var edadNaufrago = (DateTime.Now - dtp.Value).Days / 365;
-
             if (dtp == null) return;
 
-            if (edadNaufrago > 12 || edadNaufrago <= 7)
+            var edadNaufrago = dtp.Value.GetEdad();
+
+            if (edadNaufrago < 7  || edadNaufrago > 12)
             {
                 dtp.CalendarTitleBackColor = Color.Tomato;
-                MessageBox.Show($"La  edad ({edadNaufrago}años) del Naufrago no es apta para inscripción en la Taber Isla.");
-                e.Cancel = true;
+                MessageBox.Show($"La  edad ({edadNaufrago} años) del náufrago no es apta para inscripción en la Taber Isla.");
             }
             else
             {
-                txtEdad.Text = $"{edadNaufrago.ToString()} años";
+                txtEdad.Text = $"{edadNaufrago} años";
                 dtp.CalendarTitleBackColor = Color.White;
             }
         }
@@ -193,7 +208,7 @@ namespace Depcom.TaberIsla.WinForm.Formularios
         {
             if (!_validClosed) return;
 
-            if (MessageBox.Show("¿Está seguro de cerrar la ventana? perderá todos los datos ingresados.",
+            if (MessageBox.Show("¿Está seguro de cerrar la ventana? perderá todos los datos no guardados.",
                 "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
             {
                 e.Cancel = true;

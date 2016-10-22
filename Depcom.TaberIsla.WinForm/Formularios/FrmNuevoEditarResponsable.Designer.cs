@@ -64,7 +64,7 @@
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(100, 35);
             this.btnSiguiente.TabIndex = 6;
-            this.btnSiguiente.Text = "Siguiente";
+            this.btnSiguiente.Text = "SIGUIENTE";
             this.btnSiguiente.UseVisualStyleBackColor = true;
             this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
@@ -78,7 +78,7 @@
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 35);
             this.btnCancelar.TabIndex = 7;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 

@@ -31,15 +31,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvNaufragos = new System.Windows.Forms.DataGridView();
+            this.btnCrear = new Depcom.TaberIsla.WinForm.Base.FlatButton();
+            this.btnEditar = new Depcom.TaberIsla.WinForm.Base.FlatButton();
+            this.btnBorrar = new Depcom.TaberIsla.WinForm.Base.FlatButton();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCorrelativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colApellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFechaNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colResponsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCrear = new Depcom.TaberIsla.WinForm.Base.FlatButton();
-            this.btnEditar = new Depcom.TaberIsla.WinForm.Base.FlatButton();
-            this.btnBorrar = new Depcom.TaberIsla.WinForm.Base.FlatButton();
+            this.colObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNaufragos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +57,8 @@
             this.colNombres,
             this.colApellidos,
             this.colFechaNac,
-            this.colResponsable});
+            this.colResponsable,
+            this.colObservacion});
             this.dgvNaufragos.Location = new System.Drawing.Point(12, 68);
             this.dgvNaufragos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvNaufragos.MultiSelect = false;
@@ -67,60 +69,6 @@
             this.dgvNaufragos.Size = new System.Drawing.Size(710, 371);
             this.dgvNaufragos.TabIndex = 0;
             this.dgvNaufragos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNaufragos_CellEnter);
-            // 
-            // colId
-            // 
-            this.colId.DataPropertyName = "Id";
-            this.colId.HeaderText = "ID";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Visible = false;
-            this.colId.Width = 133;
-            // 
-            // colCorrelativo
-            // 
-            this.colCorrelativo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colCorrelativo.DataPropertyName = "Correlativo";
-            dataGridViewCellStyle1.Format = "000";
-            dataGridViewCellStyle1.NullValue = null;
-            this.colCorrelativo.DefaultCellStyle = dataGridViewCellStyle1;
-            this.colCorrelativo.HeaderText = "Correlativo";
-            this.colCorrelativo.Name = "colCorrelativo";
-            this.colCorrelativo.ReadOnly = true;
-            // 
-            // colNombres
-            // 
-            this.colNombres.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colNombres.DataPropertyName = "Nombres";
-            this.colNombres.HeaderText = "Nombres";
-            this.colNombres.Name = "colNombres";
-            this.colNombres.ReadOnly = true;
-            // 
-            // colApellidos
-            // 
-            this.colApellidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colApellidos.DataPropertyName = "Apellidos";
-            this.colApellidos.HeaderText = "Apellidos";
-            this.colApellidos.Name = "colApellidos";
-            this.colApellidos.ReadOnly = true;
-            // 
-            // colFechaNac
-            // 
-            this.colFechaNac.DataPropertyName = "FechaNacimiento";
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.colFechaNac.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colFechaNac.HeaderText = "Fecha nacimiento";
-            this.colFechaNac.Name = "colFechaNac";
-            this.colFechaNac.ReadOnly = true;
-            // 
-            // colResponsable
-            // 
-            this.colResponsable.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colResponsable.DataPropertyName = "Responsable.Nombres";
-            this.colResponsable.HeaderText = "Responsable";
-            this.colResponsable.Name = "colResponsable";
-            this.colResponsable.ReadOnly = true;
             // 
             // btnCrear
             // 
@@ -161,6 +109,73 @@
             this.btnBorrar.Text = "BORRAR";
             this.btnBorrar.UseVisualStyleBackColor = true;
             // 
+            // colId
+            // 
+            this.colId.DataPropertyName = "Id";
+            this.colId.HeaderText = "ID";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Visible = false;
+            this.colId.Width = 133;
+            // 
+            // colCorrelativo
+            // 
+            this.colCorrelativo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colCorrelativo.DataPropertyName = "Correlativo";
+            dataGridViewCellStyle1.Format = "000";
+            dataGridViewCellStyle1.NullValue = null;
+            this.colCorrelativo.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colCorrelativo.HeaderText = "Correlativo";
+            this.colCorrelativo.Name = "colCorrelativo";
+            this.colCorrelativo.ReadOnly = true;
+            this.colCorrelativo.Width = 97;
+            // 
+            // colNombres
+            // 
+            this.colNombres.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colNombres.DataPropertyName = "Nombres";
+            this.colNombres.HeaderText = "Nombres";
+            this.colNombres.Name = "colNombres";
+            this.colNombres.ReadOnly = true;
+            // 
+            // colApellidos
+            // 
+            this.colApellidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colApellidos.DataPropertyName = "Apellidos";
+            this.colApellidos.HeaderText = "Apellidos";
+            this.colApellidos.Name = "colApellidos";
+            this.colApellidos.ReadOnly = true;
+            // 
+            // colFechaNac
+            // 
+            this.colFechaNac.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.colFechaNac.DataPropertyName = "FechaNacimiento";
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.colFechaNac.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colFechaNac.HeaderText = "Fecha nac.";
+            this.colFechaNac.Name = "colFechaNac";
+            this.colFechaNac.ReadOnly = true;
+            this.colFechaNac.Width = 93;
+            // 
+            // colResponsable
+            // 
+            this.colResponsable.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colResponsable.DataPropertyName = "Responsable.Nombres";
+            this.colResponsable.HeaderText = "Responsable";
+            this.colResponsable.Name = "colResponsable";
+            this.colResponsable.ReadOnly = true;
+            this.colResponsable.Visible = false;
+            // 
+            // colObservacion
+            // 
+            this.colObservacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.colObservacion.DataPropertyName = "Observacion";
+            this.colObservacion.HeaderText = "Observación";
+            this.colObservacion.Name = "colObservacion";
+            this.colObservacion.ReadOnly = true;
+            this.colObservacion.Width = 5;
+            // 
             // FrmListNaufragos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -186,14 +201,15 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvNaufragos;
+        private Base.FlatButton btnCrear;
+        private Base.FlatButton btnEditar;
+        private Base.FlatButton btnBorrar;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCorrelativo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombres;
         private System.Windows.Forms.DataGridViewTextBoxColumn colApellidos;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaNac;
         private System.Windows.Forms.DataGridViewTextBoxColumn colResponsable;
-        private Base.FlatButton btnCrear;
-        private Base.FlatButton btnEditar;
-        private Base.FlatButton btnBorrar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colObservacion;
     }
 }

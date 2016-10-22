@@ -210,7 +210,7 @@ namespace Depcom.TaberIsla.WinForm.Formularios
         {
             if (!_validClosed) return;
 
-            if (MessageBox.Show("¿Está seguro de cerrar la ventana? perderá todos los datos ingresados.",
+            if (MessageBox.Show("¿Está seguro de cerrar la ventana? perderá todos los datos no guardados.",
                 "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
             {
                 e.Cancel = true;

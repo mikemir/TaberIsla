@@ -24,5 +24,13 @@ namespace Depcom.TaberIsla.WinForm.Utils.Extensions
 
             obj.Text = value.ToString().PadLeft(3, '0');
         }
+
+        public static int GetEdad(this DateTime birthDate)
+        {
+            var now = DateTime.Now;
+            int age = now.Year - birthDate.Year;
+            if (now.Month < birthDate.Month || (now.Month == birthDate.Month && now.Day < birthDate.Day)) age--;
+            return age;
+        }
     }
 }
