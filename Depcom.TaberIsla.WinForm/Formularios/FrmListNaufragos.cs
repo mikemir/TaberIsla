@@ -32,7 +32,7 @@ namespace Depcom.TaberIsla.WinForm.Formularios
         {
             try
             {
-                LoadNaufragos();
+                LoadNaufragos(txtBusqueda.Text);
             }
             catch (Exception ex)
             {
@@ -40,17 +40,18 @@ namespace Depcom.TaberIsla.WinForm.Formularios
             }
         }
 
-        private void LoadNaufragos()
+        private void LoadNaufragos(string parametroBusqueda)
         {
             dgvNaufragos.AutoGenerateColumns = false;
-
             var serviceNaufragos = new NaufragosServices(_naufragosBl);
-            dgvNaufragos.DataSource = serviceNaufragos.GetAll();
+
+            dgvNaufragos.DataSource = string.IsNullOrEmpty(parametroBusqueda)
+                    ? serviceNaufragos.GetAll() : serviceNaufragos.Find(parametroBusqueda);
         }
 
         public void Received(object result)
         {
-            LoadNaufragos();
+            LoadNaufragos(txtBusqueda.Text);
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -69,6 +70,11 @@ namespace Depcom.TaberIsla.WinForm.Formularios
         private void dgvNaufragos_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             _idNaufragoSelected = Convert.ToInt32(dgvNaufragos.Rows[e.RowIndex].Cells["colId"].Value);
+        }
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+           LoadNaufragos(txtBusqueda.Text);
         }
     }
 }

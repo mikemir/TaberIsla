@@ -37,6 +37,16 @@ namespace Depcom.TaberIsla.DataAccess
             _unitOfWork.Dispose();
         }
 
+        public IList<Naufrago> Find(string value)
+        {
+            int correlativo = 0;
+            int.TryParse(value, out correlativo);
+
+            return _unitOfWork.NaufragosRepository.Get(n => n.Correlativo == correlativo ||
+                                                            n.Nombres.Contains(value) ||
+                                                            n.Apellidos.Contains(value));
+        }
+
         public IList<Naufrago> GetAll()
         {
             return _unitOfWork.NaufragosRepository.Get(includes: n => n.Responsable);

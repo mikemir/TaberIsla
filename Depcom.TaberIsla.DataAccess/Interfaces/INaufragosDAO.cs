@@ -12,5 +12,6 @@ namespace Depcom.TaberIsla.DataAccess.Interfaces
     public interface INaufragosDAO : ITaberIslaDAO<Naufrago>
     {
         int Count(Expression<Func<Naufrago, bool>> filter = null);
+        IList<Naufrago> Find(string value);
     }
 }

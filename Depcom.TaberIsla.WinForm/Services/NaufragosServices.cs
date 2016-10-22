@@ -19,6 +19,12 @@ namespace Depcom.TaberIsla.WinForm.Services
 
             _naufragosBl = naufragosBl;
         }
+
+        public IList<Naufrago> Find(string value)
+        {
+            return _naufragosBl.Find(value);
+        }
+
         public IList<Naufrago> GetAll()
         {
             return _naufragosBl.GetAll();

@@ -10,5 +10,7 @@ namespace Depcom.TaberIsla.WinForm.Services.Interfaces
     public interface INaufragosServices
     {
         IList<Naufrago> GetAll();
+
+        IList<Naufrago> Find(string value);
     }
 }

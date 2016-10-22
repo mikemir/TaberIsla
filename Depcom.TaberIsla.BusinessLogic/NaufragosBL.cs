@@ -34,6 +34,11 @@ namespace Depcom.TaberIsla.BusinessLogic
             _naufragosDao.Delete(entity);
         }
 
+        public IList<Naufrago> Find(string value)
+        {
+            return _naufragosDao.Find(value);
+        }
+
         public IList<Naufrago> GetAll()
         {
             return _naufragosDao.GetAll();

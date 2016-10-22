@@ -12,5 +12,6 @@ namespace Depcom.TaberIsla.BusinessLogic.Interfaces
     public interface INaufragosBL : ITaberIslaBL<Naufrago>
     {
         int Count(Expression<Func<Naufrago, bool>> filter = null);
+        IList<Naufrago> Find(string value);
     }
 }
