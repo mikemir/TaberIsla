@@ -64,8 +64,7 @@ namespace Depcom.TaberIsla.Test.DataAccess
         {
             //Arrange
             IList<Item> resultFromRepository;
-            var dbSet = Substitute.For<DbSet<Item>>().SetupData(_mockData);
-            //For<DbSet<Blog>, IQueryable<Blog>, IDbAsyncEnumerable<Blog>>()
+            var dbSet = Substitute.For<DbSet<Item>, IQueryable<Item>, IDbAsyncEnumerable<Item>>().SetupData(_mockData);
             var dbContext = Substitute.For<HelperDbContext>();
             dbContext.Set<Item>().Returns(dbSet);
 

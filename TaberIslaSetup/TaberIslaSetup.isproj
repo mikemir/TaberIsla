@@ -28,4 +28,10 @@
 		</TaggedOutputs> -->
 	</ItemGroup>
 	<Import Project="$(MSBuildExtensionsPath32)\InstallShield\2015Limited\InstallShield.targets"/>
+	<ItemGroup>
+		<ProjectReference Include="..\Depcom.TaberIsla.WinForm\Depcom.TaberIsla.WinForm.csproj">
+			<Name>Depcom.TaberIsla.WinForm</Name>
+			<Project>{3B02798E-7CB5-4684-BC3F-9C0445FF4DF3}</Project>
+		</ProjectReference>
+	</ItemGroup>
 </Project>

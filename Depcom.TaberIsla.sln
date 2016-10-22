@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0-Domain", "0-Domain", "{ED
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-BusinessLogic", "3-BusinessLogic", "{EE47FA0E-B2C7-4ECA-A8AC-9A71045B24AF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-UserInterface", "4-UserInterface", "{E440B8F6-833F-4871-899A-BECD462F5BD6}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7-UserInterface", "7-UserInterface", "{E440B8F6-833F-4871-899A-BECD462F5BD6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5-Testing", "5-Testing", "{F91C147B-09C8-4BBF-99EE-5F79B2FC2CD1}"
 EndProject
@@ -32,6 +32,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Depcom.TaberIsla.DepencyResolver", "Depcom.TaberIsla.DepencyResolver\Depcom.TaberIsla.DepencyResolver.csproj", "{1460EFB2-6A7E-4B15-B507-263A42AB3649}"
 EndProject
 Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "TaberIslaSetup", "TaberIslaSetup\TaberIslaSetup.isproj", "{EB386A37-849E-4697-9AEF-7FD17B868580}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Depcom.TaberIsla.Dtos", "Depcom.TaberIsla.Dtos\Depcom.TaberIsla.Dtos.csproj", "{4DE009B7-E4D6-41CD-908A-76AF4CFB75F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-BussinessEntities", "4-BussinessEntities", "{F6320521-FCA5-479A-9084-034F17CDEF91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -122,6 +126,16 @@ Global
 		{EB386A37-849E-4697-9AEF-7FD17B868580}.Release|Any CPU.Build.0 = SingleImage
 		{EB386A37-849E-4697-9AEF-7FD17B868580}.SingleImage|Any CPU.ActiveCfg = SingleImage
 		{EB386A37-849E-4697-9AEF-7FD17B868580}.SingleImage|Any CPU.Build.0 = SingleImage
+		{4DE009B7-E4D6-41CD-908A-76AF4CFB75F5}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{4DE009B7-E4D6-41CD-908A-76AF4CFB75F5}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
+		{4DE009B7-E4D6-41CD-908A-76AF4CFB75F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DE009B7-E4D6-41CD-908A-76AF4CFB75F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DE009B7-E4D6-41CD-908A-76AF4CFB75F5}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DE009B7-E4D6-41CD-908A-76AF4CFB75F5}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
+		{4DE009B7-E4D6-41CD-908A-76AF4CFB75F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DE009B7-E4D6-41CD-908A-76AF4CFB75F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DE009B7-E4D6-41CD-908A-76AF4CFB75F5}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{4DE009B7-E4D6-41CD-908A-76AF4CFB75F5}.SingleImage|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -134,5 +148,6 @@ Global
 		{75063312-15BE-447C-B3DB-6586A4BE264F} = {F91C147B-09C8-4BBF-99EE-5F79B2FC2CD1}
 		{B18FBA44-5D0C-4564-9343-6C230DD80DAA} = {E672CE75-390B-4FB7-9F2E-EA9286AFC5F8}
 		{1460EFB2-6A7E-4B15-B507-263A42AB3649} = {F55AB223-228E-4657-B7F4-9E6E3E5F87E6}
+		{4DE009B7-E4D6-41CD-908A-76AF4CFB75F5} = {F6320521-FCA5-479A-9084-034F17CDEF91}
 	EndGlobalSection
 EndGlobal

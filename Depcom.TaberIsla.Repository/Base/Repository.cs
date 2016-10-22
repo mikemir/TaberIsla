@@ -40,7 +40,7 @@ namespace Depcom.TaberIsla.Repository.Base
 
                 return (orderBy == null) ? query.ToList() : orderBy(query).ToList<T>();
             }
-            catch (Exception ex)
+            catch
             {
                 throw;
             }
