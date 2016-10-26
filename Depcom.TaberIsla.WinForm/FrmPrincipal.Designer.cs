@@ -38,6 +38,12 @@ namespace Depcom.TaberIsla.WinForm
             this.lblCantidadRestante = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnActualizar = new Depcom.TaberIsla.WinForm.Base.FlatButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblRestantesReal = new System.Windows.Forms.Label();
+            this.lblTotalReal = new System.Windows.Forms.Label();
+            this.btnEnviarReporte = new Depcom.TaberIsla.WinForm.Base.FlatButton();
             this.SuspendLayout();
             // 
             // flatButton4
@@ -99,7 +105,7 @@ namespace Depcom.TaberIsla.WinForm
             // lblCantidadTotal
             // 
             this.lblCantidadTotal.AutoSize = true;
-            this.lblCantidadTotal.Location = new System.Drawing.Point(92, 393);
+            this.lblCantidadTotal.Location = new System.Drawing.Point(822, 398);
             this.lblCantidadTotal.Name = "lblCantidadTotal";
             this.lblCantidadTotal.Size = new System.Drawing.Size(49, 17);
             this.lblCantidadTotal.TabIndex = 4;
@@ -108,7 +114,7 @@ namespace Depcom.TaberIsla.WinForm
             // lblCantidadRestante
             // 
             this.lblCantidadRestante.AutoSize = true;
-            this.lblCantidadRestante.Location = new System.Drawing.Point(92, 417);
+            this.lblCantidadRestante.Location = new System.Drawing.Point(822, 417);
             this.lblCantidadRestante.Name = "lblCantidadRestante";
             this.lblCantidadRestante.Size = new System.Drawing.Size(49, 17);
             this.lblCantidadRestante.TabIndex = 5;
@@ -117,7 +123,7 @@ namespace Depcom.TaberIsla.WinForm
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 393);
+            this.label1.Location = new System.Drawing.Point(738, 398);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 17);
             this.label1.TabIndex = 6;
@@ -126,11 +132,75 @@ namespace Depcom.TaberIsla.WinForm
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 417);
+            this.label2.Location = new System.Drawing.Point(738, 417);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 17);
             this.label2.TabIndex = 7;
             this.label2.Text = "RESTANTES:";
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnActualizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.btnActualizar.Location = new System.Drawing.Point(763, 25);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(109, 32);
+            this.btnActualizar.TabIndex = 8;
+            this.btnActualizar.Text = "ACTUALIZAR";
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 417);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 17);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "RESTANTES:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 398);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 17);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "TOTAL REAL:";
+            // 
+            // lblRestantesReal
+            // 
+            this.lblRestantesReal.AutoSize = true;
+            this.lblRestantesReal.Location = new System.Drawing.Point(96, 417);
+            this.lblRestantesReal.Name = "lblRestantesReal";
+            this.lblRestantesReal.Size = new System.Drawing.Size(49, 17);
+            this.lblRestantesReal.TabIndex = 10;
+            this.lblRestantesReal.Text = "ERROR";
+            // 
+            // lblTotalReal
+            // 
+            this.lblTotalReal.AutoSize = true;
+            this.lblTotalReal.Location = new System.Drawing.Point(96, 398);
+            this.lblTotalReal.Name = "lblTotalReal";
+            this.lblTotalReal.Size = new System.Drawing.Size(49, 17);
+            this.lblTotalReal.TabIndex = 9;
+            this.lblTotalReal.Text = "ERROR";
+            // 
+            // btnEnviarReporte
+            // 
+            this.btnEnviarReporte.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnEnviarReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviarReporte.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnEnviarReporte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.btnEnviarReporte.Location = new System.Drawing.Point(763, 63);
+            this.btnEnviarReporte.Name = "btnEnviarReporte";
+            this.btnEnviarReporte.Size = new System.Drawing.Size(109, 30);
+            this.btnEnviarReporte.TabIndex = 13;
+            this.btnEnviarReporte.Text = "ENVIAR REPORTE";
+            this.btnEnviarReporte.UseVisualStyleBackColor = false;
+            this.btnEnviarReporte.Click += new System.EventHandler(this.btnEnviarReporte_Click);
             // 
             // FrmPrincipal
             // 
@@ -138,6 +208,12 @@ namespace Depcom.TaberIsla.WinForm
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(884, 461);
+            this.Controls.Add(this.btnEnviarReporte);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblRestantesReal);
+            this.Controls.Add(this.lblTotalReal);
+            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCantidadRestante);
@@ -159,6 +235,12 @@ namespace Depcom.TaberIsla.WinForm
             this.Controls.SetChildIndex(this.lblCantidadRestante, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.btnActualizar, 0);
+            this.Controls.SetChildIndex(this.lblTotalReal, 0);
+            this.Controls.SetChildIndex(this.lblRestantesReal, 0);
+            this.Controls.SetChildIndex(this.label4, 0);
+            this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.btnEnviarReporte, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,5 +256,11 @@ namespace Depcom.TaberIsla.WinForm
         private System.Windows.Forms.Label lblCantidadRestante;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private FlatButton btnActualizar;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblRestantesReal;
+        private System.Windows.Forms.Label lblTotalReal;
+        private FlatButton btnEnviarReporte;
     }
 }

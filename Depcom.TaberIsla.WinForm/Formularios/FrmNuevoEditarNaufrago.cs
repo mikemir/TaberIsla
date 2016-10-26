@@ -191,6 +191,7 @@ namespace Depcom.TaberIsla.WinForm.Formularios
             if (dtp == null) return;
 
             var edadNaufrago = dtp.Value.GetEdad();
+            txtEdad.Text = $"{edadNaufrago} años";
 
             if (edadNaufrago < 7  || edadNaufrago > 12)
             {
@@ -199,7 +200,6 @@ namespace Depcom.TaberIsla.WinForm.Formularios
             }
             else
             {
-                txtEdad.Text = $"{edadNaufrago} años";
                 dtp.CalendarTitleBackColor = Color.White;
             }
         }

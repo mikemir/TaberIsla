@@ -341,7 +341,7 @@
 		<col def="S0">ISDotNetInstallerArgsCommit</col>
 		<col def="S0">ISDotNetInstallerArgsUninstall</col>
 		<col def="S0">ISDotNetInstallerArgsRollback</col>
-		<row><td>Depcom.TaberIsla.WinForm.Resultado_principal</td><td>{40406DD3-3455-468F-8592-7724D22E1F92}</td><td>INSTALLDIR</td><td>2</td><td/><td>depcom.taberisla.winform.res</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>Depcom.TaberIsla.WinForm.Resultado_principal</td><td>{C731F3F0-3B01-400B-8740-2C8358739270}</td><td>INSTALLDIR</td><td>2</td><td/><td>depcom.taberisla.winform.res</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 	</table>
 
 	<table name="Condition">
@@ -2021,7 +2021,7 @@
 		<col def="S0">FTPLocation</col>
 		<col def="S0">HTTPLocation</col>
 		<col def="S0">Miscellaneous</col>
-		<row><td>Depcom.TaberIsla.WinForm.Resultado_principal</td><td/><td/><td>_DF0DF4F2_53FE_47D1_BFEB_44CE2C8B0B5F_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>Depcom.TaberIsla.WinForm.Resultado_principal</td><td/><td/><td>_4FC35FC2_DA23_41B5_AFA3_5CA60AD4F46B_FILTER</td><td/><td/><td/><td/></row>
 	</table>
 
 	<table name="ISCustomActionReference">
@@ -2610,7 +2610,7 @@
 		<col def="I2">Encoded</col>
 		<col def="S0">Comment</col>
 		<col def="I4">TimeStamp</col>
-		<row><td>COMPANY_NAME</td><td>1033</td><td>Depcom</td><td>0</td><td/><td>-1792779200</td></row>
+		<row><td>COMPANY_NAME</td><td>1033</td><td>Depcom</td><td>0</td><td/><td>-1255870751</td></row>
 		<row><td>DN_AlwaysInstall</td><td>1033</td><td>Always Install</td><td>0</td><td/><td>-2061229589</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_COLOR</td><td>1033</td><td>The color settings of your system are not adequate for running [ProductName].</td><td>0</td><td/><td>-2061229589</td></row>
 		<row><td>IDPROP_EXPRESS_LAUNCH_CONDITION_DOTNETVERSION45FULL</td><td>1033</td><td>Microsoft .NET Framework 4.5 Full package or greater needs to be installed for this installation to continue.</td><td>0</td><td/><td>-2061192661</td></row>
@@ -3714,8 +3714,8 @@
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>-2061229589</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>-2061229589</td></row>
 		<row><td>ID_STRING1</td><td>1033</td><td/><td>0</td><td/><td>-2061227541</td></row>
-		<row><td>ID_STRING2</td><td>1033</td><td>http://www.Depcom.com</td><td>0</td><td/><td>-1792779200</td></row>
-		<row><td>ID_STRING3</td><td>1033</td><td>Depcom</td><td>0</td><td/><td>-1792779200</td></row>
+		<row><td>ID_STRING2</td><td>1033</td><td>http://www.Depcom.com</td><td>0</td><td/><td>-1255870751</td></row>
+		<row><td>ID_STRING3</td><td>1033</td><td>Depcom</td><td>0</td><td/><td>-1255870751</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>Launch |Built</td><td>0</td><td/><td>-1792788128</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>-2061229589</td></row>
 	</table>
@@ -4419,8 +4419,6 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="L255">FileName</col>
 		<col def="s72">DirProperty</col>
 		<col def="i2">InstallMode</col>
-		<row><td>FileKey1</td><td>Depcom.TaberIsla.WinForm.Resultado_principal</td><td/><td>depcom</td><td>2</td></row>
-		<row><td>FileKey2</td><td>Depcom.TaberIsla.WinForm.Resultado_principal</td><td/><td>taberi_1_taberislasetup</td><td>2</td></row>
 	</table>
 
 	<table name="RemoveIniFile">

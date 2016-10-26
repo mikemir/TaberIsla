@@ -31,11 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvNaufragos = new System.Windows.Forms.DataGridView();
-            this.btnCrear = new Depcom.TaberIsla.WinForm.Base.FlatButton();
-            this.btnEditar = new Depcom.TaberIsla.WinForm.Base.FlatButton();
-            this.btnBorrar = new Depcom.TaberIsla.WinForm.Base.FlatButton();
-            this.txtBusqueda = new Depcom.TaberIsla.WinForm.Base.FlatTextBox();
-            this.flatButton1 = new Depcom.TaberIsla.WinForm.Base.FlatButton();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCorrelativo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +38,11 @@
             this.colFechaNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colResponsable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colObservacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCrear = new Depcom.TaberIsla.WinForm.Base.FlatButton();
+            this.btnEditar = new Depcom.TaberIsla.WinForm.Base.FlatButton();
+            this.btnBorrar = new Depcom.TaberIsla.WinForm.Base.FlatButton();
+            this.txtBusqueda = new Depcom.TaberIsla.WinForm.Base.FlatTextBox();
+            this.flatButton1 = new Depcom.TaberIsla.WinForm.Base.FlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNaufragos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,70 +71,6 @@
             this.dgvNaufragos.Size = new System.Drawing.Size(710, 371);
             this.dgvNaufragos.TabIndex = 0;
             this.dgvNaufragos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNaufragos_CellEnter);
-            // 
-            // btnCrear
-            // 
-            this.btnCrear.Enabled = false;
-            this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrear.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnCrear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.btnCrear.Location = new System.Drawing.Point(12, 20);
-            this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(100, 35);
-            this.btnCrear.TabIndex = 2;
-            this.btnCrear.Text = "CREAR";
-            this.btnCrear.UseVisualStyleBackColor = true;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.btnEditar.Location = new System.Drawing.Point(133, 20);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(100, 35);
-            this.btnEditar.TabIndex = 3;
-            this.btnEditar.Text = "EDITAR";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.Enabled = false;
-            this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBorrar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnBorrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.btnBorrar.Location = new System.Drawing.Point(622, 20);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(100, 35);
-            this.btnBorrar.TabIndex = 4;
-            this.btnBorrar.Text = "BORRAR";
-            this.btnBorrar.UseVisualStyleBackColor = true;
-            // 
-            // txtBusqueda
-            // 
-            this.txtBusqueda.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBusqueda.Location = new System.Drawing.Point(285, 25);
-            this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(213, 25);
-            this.txtBusqueda.TabIndex = 5;
-            this.txtBusqueda.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
-            // 
-            // flatButton1
-            // 
-            this.flatButton1.Enabled = false;
-            this.flatButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.flatButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.flatButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.flatButton1.Location = new System.Drawing.Point(497, 25);
-            this.flatButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.flatButton1.Name = "flatButton1";
-            this.flatButton1.Size = new System.Drawing.Size(71, 25);
-            this.flatButton1.TabIndex = 6;
-            this.flatButton1.Text = "Búsqueda";
-            this.flatButton1.UseVisualStyleBackColor = true;
             // 
             // colId
             // 
@@ -205,6 +141,70 @@
             this.colObservacion.Name = "colObservacion";
             this.colObservacion.ReadOnly = true;
             this.colObservacion.Width = 210;
+            // 
+            // btnCrear
+            // 
+            this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrear.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnCrear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.btnCrear.Location = new System.Drawing.Point(12, 20);
+            this.btnCrear.Name = "btnCrear";
+            this.btnCrear.Size = new System.Drawing.Size(128, 35);
+            this.btnCrear.TabIndex = 2;
+            this.btnCrear.Text = "CREAR DUMMIE";
+            this.btnCrear.UseVisualStyleBackColor = true;
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.btnEditar.Location = new System.Drawing.Point(158, 20);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(100, 35);
+            this.btnEditar.TabIndex = 3;
+            this.btnEditar.Text = "EDITAR";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Enabled = false;
+            this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorrar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnBorrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.btnBorrar.Location = new System.Drawing.Point(622, 20);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(100, 35);
+            this.btnBorrar.TabIndex = 4;
+            this.btnBorrar.Text = "BORRAR";
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBusqueda.Location = new System.Drawing.Point(296, 25);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(213, 25);
+            this.txtBusqueda.TabIndex = 5;
+            this.txtBusqueda.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
+            // 
+            // flatButton1
+            // 
+            this.flatButton1.Enabled = false;
+            this.flatButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.flatButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.flatButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.flatButton1.Location = new System.Drawing.Point(508, 25);
+            this.flatButton1.Margin = new System.Windows.Forms.Padding(0);
+            this.flatButton1.Name = "flatButton1";
+            this.flatButton1.Size = new System.Drawing.Size(71, 25);
+            this.flatButton1.TabIndex = 6;
+            this.flatButton1.Text = "Búsqueda";
+            this.flatButton1.UseVisualStyleBackColor = true;
             // 
             // FrmListNaufragos
             // 

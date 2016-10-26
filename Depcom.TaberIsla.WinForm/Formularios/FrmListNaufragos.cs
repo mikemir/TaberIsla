@@ -1,4 +1,5 @@
 ﻿using Depcom.TaberIsla.BusinessLogic.Interfaces;
+using Depcom.TaberIsla.Domain;
 using Depcom.TaberIsla.WinForm.Base;
 using Depcom.TaberIsla.WinForm.Services;
 using Depcom.TaberIsla.WinForm.Utils.Interfaces;
@@ -18,13 +19,19 @@ namespace Depcom.TaberIsla.WinForm.Formularios
     public partial class FrmListNaufragos : FlatForm, ICommunicable
     {
         private int _idNaufragoSelected;
-        private INaufragosBL _naufragosBl = null;
-        public FrmListNaufragos(INaufragosBL naufragosBl)
+        private readonly INaufragosBL _naufragosBl;
+        private readonly IResponsablesBL _responsablesBl;
+
+        public FrmListNaufragos(INaufragosBL naufragosBl, IResponsablesBL responsablesBl)
         {
             if (naufragosBl == null)
                 throw new ArgumentNullException(nameof(naufragosBl));
 
+            if (responsablesBl == null)
+                throw new ArgumentNullException(nameof(responsablesBl));
+
             _naufragosBl = naufragosBl;
+            _responsablesBl = responsablesBl;
             InitializeComponent();
         }
 
@@ -75,6 +82,31 @@ namespace Depcom.TaberIsla.WinForm.Formularios
         private void txtBusqueda_TextChanged(object sender, EventArgs e)
         {
            LoadNaufragos(txtBusqueda.Text);
+        }
+
+        private void btnCrear_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmLogin();
+
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                if (MessageBox.Show("¿Esta seguro que desea crear un registro DUMMIE?", "Crear Dummie", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    var correlativo = _naufragosBl.Count() + 1;
+                    var responsable = _responsablesBl.GetByDUI("00000000-0");
+
+                    _naufragosBl.Insert(new Naufrago
+                    {
+                        Correlativo = correlativo,
+                        Nombres = "DEPCOM",
+                        Apellidos = "DUMMIE",
+                        FechaNacimiento = new DateTime(),
+                        Responsable = responsable ?? new Responsable { Dui = "00000000-0", Nombres = "DEPCOM", Apellidos = "DUMMIE", Direccion = "", Telefono1 = "", Telefono2 = "" }
+                    });
+
+                    LoadNaufragos("");
+                }
+            }
         }
     }
 }
