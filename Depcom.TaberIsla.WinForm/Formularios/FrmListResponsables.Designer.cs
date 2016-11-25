@@ -63,6 +63,7 @@
             // 
             // colID
             // 
+            this.colID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.colID.DataPropertyName = "Id";
             this.colID.HeaderText = "ID";
             this.colID.Name = "colID";
@@ -71,7 +72,7 @@
             // 
             // colDUI
             // 
-            this.colDUI.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDUI.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.colDUI.DataPropertyName = "Dui";
             this.colDUI.HeaderText = "DUI";
             this.colDUI.Name = "colDUI";
@@ -79,22 +80,25 @@
             // 
             // colNombres
             // 
-            this.colNombres.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colNombres.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.colNombres.DataPropertyName = "Nombres";
             this.colNombres.HeaderText = "Nombes";
             this.colNombres.Name = "colNombres";
             this.colNombres.ReadOnly = true;
+            this.colNombres.Width = 150;
             // 
             // colApellidos
             // 
-            this.colApellidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colApellidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.colApellidos.DataPropertyName = "Apellidos";
             this.colApellidos.HeaderText = "Apellidos";
             this.colApellidos.Name = "colApellidos";
             this.colApellidos.ReadOnly = true;
+            this.colApellidos.Width = 150;
             // 
             // colTelefono1
             // 
+            this.colTelefono1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.colTelefono1.DataPropertyName = "Telefono1";
             this.colTelefono1.HeaderText = "Telefono 1";
             this.colTelefono1.Name = "colTelefono1";
@@ -102,6 +106,7 @@
             // 
             // colTelefono2
             // 
+            this.colTelefono2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.colTelefono2.DataPropertyName = "Telefono2";
             this.colTelefono2.HeaderText = "Telefono 2";
             this.colTelefono2.Name = "colTelefono2";
@@ -109,12 +114,12 @@
             // 
             // colDireccion
             // 
-            this.colDireccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colDireccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.colDireccion.DataPropertyName = "Direccion";
             this.colDireccion.HeaderText = "Dirección";
             this.colDireccion.Name = "colDireccion";
             this.colDireccion.ReadOnly = true;
-            this.colDireccion.Width = 87;
+            this.colDireccion.Width = 200;
             // 
             // FrmListResponsables
             // 

@@ -3425,6 +3425,7 @@
 		<row><td>IDS_SETUPEXE_EXPIRE_MSG</td><td>1033</td><td>This setup works until %s. The setup will now exit.</td><td>0</td><td/><td>-2061229589</td></row>
 		<row><td>IDS_SETUPEXE_LAUNCH_COND_E</td><td>1033</td><td>This setup was built with an evaluation version of InstallShield and can only be launched from setup.exe.</td><td>0</td><td/><td>-2061229589</td></row>
 		<row><td>IDS_SHORTCUT_DISPLAY_NAME1</td><td>1033</td><td>Launch |Built</td><td>0</td><td/><td>-1792794272</td></row>
+		<row><td>IDS_SHORTCUT_DISPLAY_NAME2</td><td>1033</td><td>TaberIsla</td><td>0</td><td/><td>-853241066</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO</td><td>1033</td><td>From the list of servers below, select the database server you would like to target.</td><td>0</td><td/><td>-2061229589</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_DB</td><td>1033</td><td>From the list of catalog names below, select the database catalog you would like to target.</td><td>0</td><td/><td>-2061229589</td></row>
 		<row><td>IDS_SQLBROWSE_INTRO_TEMPLATE</td><td>1033</td><td>[IS_SQLBROWSE_INTRO]</td><td>0</td><td/><td>-2061229589</td></row>
@@ -3717,6 +3718,7 @@
 		<row><td>ID_STRING2</td><td>1033</td><td>http://www.Depcom.com</td><td>0</td><td/><td>-1255870751</td></row>
 		<row><td>ID_STRING3</td><td>1033</td><td>Depcom</td><td>0</td><td/><td>-1255870751</td></row>
 		<row><td>ID_STRING4</td><td>1033</td><td>Launch |Built</td><td>0</td><td/><td>-1792788128</td></row>
+		<row><td>ID_STRING5</td><td>1033</td><td>Launch |Built</td><td>0</td><td/><td>-853241098</td></row>
 		<row><td>IIDS_UITEXT_FeatureUninstalled</td><td>1033</td><td>This feature will remain uninstalled.</td><td>0</td><td/><td>-2061229589</td></row>
 	</table>
 
@@ -4342,7 +4344,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<row><td>PROGRAMFILETOLAUNCHATEND</td><td>[INSTALLDIR]Depcom.TaberIsla.WinForm.Resultado principal</td><td/></row>
 		<row><td>ProductCode</td><td>{DD28F48F-FCA4-4769-B52A-1F41C9E6DC91}</td><td/></row>
 		<row><td>ProductName</td><td>TaberIslaSetup</td><td/></row>
-		<row><td>ProductVersion</td><td>1.00.0000</td><td/></row>
+		<row><td>ProductVersion</td><td>1.01.0000</td><td/></row>
 		<row><td>ProgressType0</td><td>install</td><td/></row>
 		<row><td>ProgressType1</td><td>Installing</td><td/></row>
 		<row><td>ProgressType2</td><td>installed</td><td/></row>

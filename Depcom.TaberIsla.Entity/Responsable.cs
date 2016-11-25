@@ -24,6 +24,8 @@ namespace Depcom.TaberIsla.Domain
         [Required]
         public string Telefono2 { get; set; }
 
+        public DateTime? FechaHoraIngreso { get; set; }
+
         //Propiedades de navegación
         public ICollection<Naufrago> Naufragos { get; set; }
     }

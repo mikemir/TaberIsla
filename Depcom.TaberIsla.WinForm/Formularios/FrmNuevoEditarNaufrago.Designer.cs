@@ -44,6 +44,7 @@
             this.txtId = new Depcom.TaberIsla.WinForm.Base.FlatTextBox();
             this.flatButton1 = new Depcom.TaberIsla.WinForm.Base.FlatButton();
             this.txtResponsable = new Depcom.TaberIsla.WinForm.Base.FlatTextBox();
+            this.chkEsEspecial = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label3
@@ -87,7 +88,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 196);
+            this.label1.Location = new System.Drawing.Point(13, 226);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 17);
             this.label1.TabIndex = 13;
@@ -96,7 +97,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 237);
+            this.label6.Location = new System.Drawing.Point(13, 265);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 34);
             this.label6.TabIndex = 15;
@@ -106,7 +107,7 @@
             // 
             this.txtObservacion.BackColor = System.Drawing.Color.Gainsboro;
             this.txtObservacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtObservacion.Location = new System.Drawing.Point(114, 237);
+            this.txtObservacion.Location = new System.Drawing.Point(114, 265);
             this.txtObservacion.Multiline = true;
             this.txtObservacion.Name = "txtObservacion";
             this.txtObservacion.Size = new System.Drawing.Size(351, 83);
@@ -118,7 +119,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.btnCancelar.Location = new System.Drawing.Point(235, 338);
+            this.btnCancelar.Location = new System.Drawing.Point(235, 368);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 35);
             this.btnCancelar.TabIndex = 11;
@@ -131,7 +132,7 @@
             this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSiguiente.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnSiguiente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.btnSiguiente.Location = new System.Drawing.Point(349, 338);
+            this.btnSiguiente.Location = new System.Drawing.Point(349, 368);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(115, 35);
             this.btnSiguiente.TabIndex = 10;
@@ -144,7 +145,7 @@
             this.dtpFechaNacimiento.CustomFormat = "dd-MM-yyyy";
             this.dtpFechaNacimiento.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(159, 194);
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(159, 224);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(167, 25);
             this.dtpFechaNacimiento.TabIndex = 3;
@@ -153,7 +154,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(332, 196);
+            this.label4.Location = new System.Drawing.Point(332, 226);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 17);
             this.label4.TabIndex = 17;
@@ -163,7 +164,7 @@
             // 
             this.txtEdad.BackColor = System.Drawing.Color.LightSteelBlue;
             this.txtEdad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEdad.Location = new System.Drawing.Point(378, 194);
+            this.txtEdad.Location = new System.Drawing.Point(378, 224);
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.ReadOnly = true;
             this.txtEdad.Size = new System.Drawing.Size(86, 25);
@@ -193,7 +194,7 @@
             this.flatButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.flatButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.flatButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.flatButton1.Location = new System.Drawing.Point(378, 154);
+            this.flatButton1.Location = new System.Drawing.Point(378, 180);
             this.flatButton1.Name = "flatButton1";
             this.flatButton1.Size = new System.Drawing.Size(87, 25);
             this.flatButton1.TabIndex = 20;
@@ -204,17 +205,28 @@
             // 
             this.txtResponsable.BackColor = System.Drawing.Color.Thistle;
             this.txtResponsable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtResponsable.Location = new System.Drawing.Point(114, 154);
+            this.txtResponsable.Location = new System.Drawing.Point(114, 180);
             this.txtResponsable.Name = "txtResponsable";
             this.txtResponsable.ReadOnly = true;
             this.txtResponsable.Size = new System.Drawing.Size(265, 25);
             this.txtResponsable.TabIndex = 21;
             // 
+            // chkEsEspecial
+            // 
+            this.chkEsEspecial.AutoSize = true;
+            this.chkEsEspecial.Location = new System.Drawing.Point(327, 148);
+            this.chkEsEspecial.Name = "chkEsEspecial";
+            this.chkEsEspecial.Size = new System.Drawing.Size(137, 21);
+            this.chkEsEspecial.TabIndex = 22;
+            this.chkEsEspecial.Text = "Educación especial";
+            this.chkEsEspecial.UseVisualStyleBackColor = true;
+            // 
             // FrmNuevoEditarNaufrago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 402);
+            this.ClientSize = new System.Drawing.Size(484, 434);
+            this.Controls.Add(this.chkEsEspecial);
             this.Controls.Add(this.txtResponsable);
             this.Controls.Add(this.flatButton1);
             this.Controls.Add(this.label5);
@@ -251,6 +263,7 @@
             this.Controls.SetChildIndex(this.label5, 0);
             this.Controls.SetChildIndex(this.flatButton1, 0);
             this.Controls.SetChildIndex(this.txtResponsable, 0);
+            this.Controls.SetChildIndex(this.chkEsEspecial, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,5 +287,6 @@
         private Base.FlatTextBox txtId;
         private Base.FlatButton flatButton1;
         private Base.FlatTextBox txtResponsable;
+        private System.Windows.Forms.CheckBox chkEsEspecial;
     }
 }

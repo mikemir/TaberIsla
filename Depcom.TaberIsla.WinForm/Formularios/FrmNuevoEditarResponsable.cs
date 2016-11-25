@@ -111,6 +111,7 @@ namespace Depcom.TaberIsla.WinForm.Formularios
                 responsable.Telefono1 = txtTelefono1.Text.Trim();
                 responsable.Telefono2 = txtTelefono2.Text.Trim();
                 responsable.Direccion = txtDireccion.Text.Trim();
+                responsable.FechaHoraIngreso = DateTime.Now;
 
                 switch (_tipoAcceso)
                 {

@@ -22,6 +22,10 @@ namespace Depcom.TaberIsla.Domain
 
         public string Observacion { get; set; }
 
+        public bool? EsEspecial { get; set; }
+
+        public DateTime? FechaHoraIngreso { get; set; }
+
         //Propiedades de navegación
         public ICollection<Medicamento> Medicamentos { get; set; }
         public int ResponsableId { get; set; }

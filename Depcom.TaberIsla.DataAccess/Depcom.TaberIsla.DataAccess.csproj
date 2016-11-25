@@ -73,6 +73,10 @@
     <Compile Include="Migrations\201610080644006_add-update-fields.Designer.cs">
       <DependentUpon>201610080644006_add-update-fields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610302207460_auditoria_y_campo_de_eespecial.cs" />
+    <Compile Include="Migrations\201610302207460_auditoria_y_campo_de_eespecial.Designer.cs">
+      <DependentUpon>201610302207460_auditoria_y_campo_de_eespecial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NaufragosDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610080644006_add-update-fields.resx">
       <DependentUpon>201610080644006_add-update-fields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610302207460_auditoria_y_campo_de_eespecial.resx">
+      <DependentUpon>201610302207460_auditoria_y_campo_de_eespecial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

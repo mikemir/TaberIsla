@@ -86,7 +86,7 @@ namespace Depcom.TaberIsla.WinForm.Formularios
             }
 
             var edadNaufrago = dtpFechaNacimiento.Value.GetEdad();
-            if (edadNaufrago < 7 || edadNaufrago > 12)
+            if (!chkEsEspecial.Checked && (edadNaufrago < 7 || edadNaufrago > 12))
             {
                 dtpFechaNacimiento.CalendarTitleBackColor = Color.Tomato;
                 MessageBox.Show($"La  edad ({edadNaufrago}años) del náufrago no es apta para inscripción en la Taber Isla.");
@@ -104,6 +104,8 @@ namespace Depcom.TaberIsla.WinForm.Formularios
                 naufrago.Apellidos = txtApellidos.Text.Trim();
                 naufrago.FechaNacimiento = dtpFechaNacimiento.Value;
                 naufrago.Observacion = string.IsNullOrWhiteSpace(txtObservacion.Text) ? null : txtObservacion.Text;
+                naufrago.EsEspecial = chkEsEspecial.Checked;
+                naufrago.FechaHoraIngreso = DateTime.Now;
 
                 switch (_tipoAcceso)
                 {
@@ -193,7 +195,7 @@ namespace Depcom.TaberIsla.WinForm.Formularios
             var edadNaufrago = dtp.Value.GetEdad();
             txtEdad.Text = $"{edadNaufrago} años";
 
-            if (edadNaufrago < 7  || edadNaufrago > 12)
+            if (!chkEsEspecial.Checked && (edadNaufrago < 7 || edadNaufrago > 12))
             {
                 dtp.CalendarTitleBackColor = Color.Tomato;
                 MessageBox.Show($"La  edad ({edadNaufrago} años) del náufrago no es apta para inscripción en la Taber Isla.");
