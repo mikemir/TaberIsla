@@ -49,10 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BajasDAO.cs" />
     <Compile Include="Base\ITaberIslaDAO.cs" />
     <Compile Include="Context\DbTaberIslaContext.cs" />
     <Compile Include="Context\DbTaberIslaDataInitializer.cs" />
     <Compile Include="DbContextFactory.cs" />
+    <Compile Include="Interfaces\IBajasDAO.cs" />
     <Compile Include="Interfaces\IDbContextFactory.cs" />
     <Compile Include="Interfaces\INaufragosDAO.cs" />
     <Compile Include="Interfaces\IResponsablesDAO.cs" />
@@ -76,6 +78,10 @@
     <Compile Include="Migrations\201610302207460_auditoria_y_campo_de_eespecial.cs" />
     <Compile Include="Migrations\201610302207460_auditoria_y_campo_de_eespecial.Designer.cs">
       <DependentUpon>201610302207460_auditoria_y_campo_de_eespecial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611251901386_add_bajas.cs" />
+    <Compile Include="Migrations\201611251901386_add_bajas.Designer.cs">
+      <DependentUpon>201611251901386_add_bajas.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NaufragosDAO.cs" />
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610302207460_auditoria_y_campo_de_eespecial.resx">
       <DependentUpon>201610302207460_auditoria_y_campo_de_eespecial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611251901386_add_bajas.resx">
+      <DependentUpon>201611251901386_add_bajas.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

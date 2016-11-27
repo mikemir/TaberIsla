@@ -50,9 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BajasRepository.cs" />
     <Compile Include="Base\IRepository.cs" />
     <Compile Include="Base\IRepositoryEditable.cs" />
     <Compile Include="Base\Repository.cs" />
+    <Compile Include="Interfaces\IBajasRepository.cs" />
     <Compile Include="Interfaces\INaufragosRepository.cs" />
     <Compile Include="Interfaces\IResponsablesRepository.cs" />
     <Compile Include="NaufragosRepository.cs" />

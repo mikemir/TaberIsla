@@ -30,7 +30,7 @@ namespace Depcom.TaberIsla.WinForm
         /// </summary>
         private void InitializeComponent()
         {
-            this.flatButton4 = new Depcom.TaberIsla.WinForm.Base.FlatButton();
+            this.btnDarBaja = new Depcom.TaberIsla.WinForm.Base.FlatButton();
             this.btnListResponsables = new Depcom.TaberIsla.WinForm.Base.FlatButton();
             this.btnListNaufragos = new Depcom.TaberIsla.WinForm.Base.FlatButton();
             this.btnNuevoResponsable = new Depcom.TaberIsla.WinForm.Base.FlatButton();
@@ -44,21 +44,23 @@ namespace Depcom.TaberIsla.WinForm
             this.lblRestantesReal = new System.Windows.Forms.Label();
             this.lblTotalReal = new System.Windows.Forms.Label();
             this.btnEnviarReporte = new Depcom.TaberIsla.WinForm.Base.FlatButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblBajas = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // flatButton4
+            // btnDarBaja
             // 
-            this.flatButton4.BackColor = System.Drawing.Color.DarkGray;
-            this.flatButton4.Enabled = false;
-            this.flatButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.flatButton4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.flatButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.flatButton4.Location = new System.Drawing.Point(434, 303);
-            this.flatButton4.Name = "flatButton4";
-            this.flatButton4.Size = new System.Drawing.Size(170, 47);
-            this.flatButton4.TabIndex = 3;
-            this.flatButton4.Text = "OPCIONES";
-            this.flatButton4.UseVisualStyleBackColor = false;
+            this.btnDarBaja.BackColor = System.Drawing.Color.DarkGray;
+            this.btnDarBaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDarBaja.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnDarBaja.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.btnDarBaja.Location = new System.Drawing.Point(434, 303);
+            this.btnDarBaja.Name = "btnDarBaja";
+            this.btnDarBaja.Size = new System.Drawing.Size(170, 47);
+            this.btnDarBaja.TabIndex = 3;
+            this.btnDarBaja.Text = "ENTRADA";
+            this.btnDarBaja.UseVisualStyleBackColor = false;
+            this.btnDarBaja.Click += new System.EventHandler(this.btnDarBaja_Click);
             // 
             // btnListResponsables
             // 
@@ -202,12 +204,32 @@ namespace Depcom.TaberIsla.WinForm
             this.btnEnviarReporte.UseVisualStyleBackColor = false;
             this.btnEnviarReporte.Click += new System.EventHandler(this.btnEnviarReporte_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(86, 17);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "TOTAL BAJAS:";
+            // 
+            // lblBajas
+            // 
+            this.lblBajas.AutoSize = true;
+            this.lblBajas.Location = new System.Drawing.Point(96, 25);
+            this.lblBajas.Name = "lblBajas";
+            this.lblBajas.Size = new System.Drawing.Size(49, 17);
+            this.lblBajas.TabIndex = 14;
+            this.lblBajas.Text = "ERROR";
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(884, 461);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblBajas);
             this.Controls.Add(this.btnEnviarReporte);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
@@ -218,7 +240,7 @@ namespace Depcom.TaberIsla.WinForm
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblCantidadRestante);
             this.Controls.Add(this.lblCantidadTotal);
-            this.Controls.Add(this.flatButton4);
+            this.Controls.Add(this.btnDarBaja);
             this.Controls.Add(this.btnListResponsables);
             this.Controls.Add(this.btnListNaufragos);
             this.Controls.Add(this.btnNuevoResponsable);
@@ -230,7 +252,7 @@ namespace Depcom.TaberIsla.WinForm
             this.Controls.SetChildIndex(this.btnNuevoResponsable, 0);
             this.Controls.SetChildIndex(this.btnListNaufragos, 0);
             this.Controls.SetChildIndex(this.btnListResponsables, 0);
-            this.Controls.SetChildIndex(this.flatButton4, 0);
+            this.Controls.SetChildIndex(this.btnDarBaja, 0);
             this.Controls.SetChildIndex(this.lblCantidadTotal, 0);
             this.Controls.SetChildIndex(this.lblCantidadRestante, 0);
             this.Controls.SetChildIndex(this.label1, 0);
@@ -241,6 +263,8 @@ namespace Depcom.TaberIsla.WinForm
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.btnEnviarReporte, 0);
+            this.Controls.SetChildIndex(this.lblBajas, 0);
+            this.Controls.SetChildIndex(this.label6, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,7 +275,7 @@ namespace Depcom.TaberIsla.WinForm
         private FlatButton btnNuevoResponsable;
         private FlatButton btnListNaufragos;
         private FlatButton btnListResponsables;
-        private FlatButton flatButton4;
+        private FlatButton btnDarBaja;
         private System.Windows.Forms.Label lblCantidadTotal;
         private System.Windows.Forms.Label lblCantidadRestante;
         private System.Windows.Forms.Label label1;
@@ -262,5 +286,7 @@ namespace Depcom.TaberIsla.WinForm
         private System.Windows.Forms.Label lblRestantesReal;
         private System.Windows.Forms.Label lblTotalReal;
         private FlatButton btnEnviarReporte;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblBajas;
     }
 }

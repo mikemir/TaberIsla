@@ -27,12 +27,15 @@ namespace Depcom.TaberIsla.DepencyResolver
 
             container.RegisterType<IResponsablesRepository, ResposablesRepository>(new ContainerControlledLifetimeManager());
             container.RegisterType<INaufragosRepository, NaufragosRepository>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IBajasRepository, BajasRepository>(new ContainerControlledLifetimeManager());
 
             container.RegisterType<IResponsablesDAO, ResponsablesDAO>();
             container.RegisterType<INaufragosDAO, NaufragosDAO>();
+            container.RegisterType<IBajasDAO, BajasDAO>();
 
             container.RegisterType<IResponsablesBL, ResponsablesBL>();
             container.RegisterType<INaufragosBL, NaufragosBL>();
+            container.RegisterType<IBajasBL, BajasBL>();
 
             return container;
         }

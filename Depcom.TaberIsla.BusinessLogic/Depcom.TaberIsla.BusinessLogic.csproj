@@ -44,8 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BajasBL.cs" />
     <Compile Include="Base\ITaberIslaBL.cs" />
     <Compile Include="Base\TaberIslaBL.cs" />
+    <Compile Include="Interfaces\IBajasBL.cs" />
     <Compile Include="Interfaces\INaufragosBL.cs" />
     <Compile Include="Interfaces\IResponsablesBL.cs" />
     <Compile Include="NaufragosBL.cs" />

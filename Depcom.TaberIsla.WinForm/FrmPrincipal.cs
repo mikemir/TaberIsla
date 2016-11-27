@@ -34,6 +34,7 @@ namespace Depcom.TaberIsla.WinForm
     {
         private INaufragosBL _naufragosBl;
         private IResponsablesBL _responsablesBl;
+        private IBajasBL _bajasBl;
 
         public FrmPrincipal(IUnityContainer container)
         {
@@ -43,6 +44,7 @@ namespace Depcom.TaberIsla.WinForm
 
             _responsablesBl = container.Resolve<IResponsablesBL>();
             _naufragosBl = container.Resolve<INaufragosBL>();
+            _bajasBl = container.Resolve<IBajasBL>();
             InitializeComponent();
         }
 
@@ -58,6 +60,8 @@ namespace Depcom.TaberIsla.WinForm
                 lblTotalReal.SetCantidad(countNaufragos - countDummies);
                 lblCantidadRestante.SetCantidad(500 - countNaufragos);
                 lblRestantesReal.SetCantidad(500 - countNaufragos - countDummies);
+
+                lblBajas.Text = _bajasBl.GetAll().Count.ToString();
 
                 var countResponsables = _responsablesBl.GetAll().Count;
                 btnListResponsables.Text = $"RESPONSABLES ({countResponsables})";
@@ -176,6 +180,12 @@ namespace Depcom.TaberIsla.WinForm
 
                 MessageBox.Show($"El correo no pudo ser enviado: {ex.Message}", "Error");
             }
+        }
+
+        private void btnDarBaja_Click(object sender, EventArgs e)
+        {
+            var frmDarBaja = new FrmDarBajaNaufrago(_bajasBl, _naufragosBl);
+            frmDarBaja.Show(this);
         }
     }
 }

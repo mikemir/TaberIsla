@@ -16,5 +16,7 @@ namespace Depcom.TaberIsla.DataAccess.Interfaces
 
         IResponsablesRepository ResponsablesRepository { get; }
         INaufragosRepository NaufragosRepository { get; }
+
+        IBajasRepository BajasRepository { get; }
     }
 }

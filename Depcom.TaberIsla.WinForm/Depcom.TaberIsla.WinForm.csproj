@@ -87,6 +87,12 @@
     <Compile Include="Base\FlatTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Formularios\FrmDarBajaNaufrago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmDarBajaNaufrago.Designer.cs">
+      <DependentUpon>FrmDarBajaNaufrago.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmListNaufragos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     <Compile Include="Utils\Interfaces\IValidable.cs" />
     <EmbeddedResource Include="Base\FlatForm.resx">
       <DependentUpon>FlatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmDarBajaNaufrago.resx">
+      <DependentUpon>FrmDarBajaNaufrago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmListNaufragos.resx">
       <DependentUpon>FrmListNaufragos.cs</DependentUpon>

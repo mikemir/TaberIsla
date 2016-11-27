@@ -43,6 +43,14 @@ namespace Depcom.TaberIsla.DataAccess
             }
         }
 
+        public IBajasRepository BajasRepository
+        {
+            get
+            {
+                return new BajasRepository(_dbContext);
+            }
+        }
+
         public virtual void SaveChanges()
         {
             SaveChanges(this.UserName ?? "NO_USER");

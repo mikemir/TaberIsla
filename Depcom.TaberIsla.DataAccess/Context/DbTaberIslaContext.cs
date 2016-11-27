@@ -21,6 +21,8 @@ namespace Depcom.TaberIsla.DataAccess.Context
 
         public virtual IDbSet<Medicamento> Medicamentos { get; set; }
 
+        public virtual IDbSet<Baja> Bajas { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
